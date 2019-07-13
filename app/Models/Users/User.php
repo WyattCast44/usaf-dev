@@ -78,7 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Validation
      */
-    public static function rules($rule = null)
+    public static function rules($rule = null, $includeKey = true)
     {
         $rules = [
             'first_name' => ['required', 'string', 'max:255'],
@@ -97,6 +97,6 @@ class User extends Authenticatable implements MustVerifyEmail
             return $rules;
         }
 
-        return [$rule => $rules[$rule]];
+        return ($includeKey) ? [$rule => $rules[$rule]] : $rules[$rule];
     }
 }
