@@ -1,5 +1,7 @@
 # CAC Login
 
+Potentially utilize CAC login for one authentication method.
+
 ## References
 
 -   https://cweiske.de/tagebuch/ssl-client-certificates.htm#enable-std-envvars

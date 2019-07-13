@@ -16,6 +16,7 @@ class CreateGendersTable extends Migration
         Schema::create('genders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->index();
+            $table->string('slug')->index();
             $table->unsignedBigInteger('display_order')->nullable()->default(0);
             $table->boolean('active')->default(true);
             $table->timestamps();
