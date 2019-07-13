@@ -21,6 +21,12 @@
 
             <li class="hover:tw-bg-gray-400">
                 <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
+                    @svg('globe', 'mr-3') Teams
+                </a>
+            </li>
+
+            <li class="hover:tw-bg-gray-400">
+                <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
                     @svg('chrome', 'mr-3') GSuite Accounts
                 </a>
             </li>
