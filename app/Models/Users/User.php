@@ -6,13 +6,14 @@ use App\Traits\UuidId;
 use App\Rules\AllowedDomain;
 use App\Models\Reference\Gender;
 use App\Rules\PasswordMinLength;
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, UuidID;
+    use HasApiTokens, Notifiable, UuidID;
 
     public $incrementing = false;
 
