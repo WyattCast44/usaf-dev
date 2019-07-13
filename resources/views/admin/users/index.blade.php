@@ -34,6 +34,7 @@
                     <th class="tw-p-3" scope="col">Name</th>
                     <th class="tw-p-3" scope="col">Email</th>
                     <th class="tw-p-3" scope="col">Email Verified</th>
+                    <th class="tw-p-3" scope="col">Last Login</th>
                     <th class="tw-p-3" scope="col"></th>
                 </tr>
             </thead>
@@ -56,6 +57,9 @@
                             @else
                             <span class="tw-text-red-500">@svg('x-circle', 'fill-current')</span>
                             @endif
+                        </td>
+                        <td class="tw-text-sm tw-text-gray-600">
+                            {{ ($user->last_login <> null) ? $user->last_login->diffForHumans() : "Hasn't loggen in yet"}}
                         </td>
                         <td class="text-right">
                             <a href="#" class="tw-text-gray-500">
