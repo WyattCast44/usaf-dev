@@ -23,7 +23,7 @@ class RegistrationTest extends TestCase
 
     public function test_if_registration_is_enabled_user_can_view_page()
     {
-        // Given registration is closed
+        // Given registration is open
         config()->set('settings.open-registration', true);
 
         // And we visit the registation page
@@ -35,6 +35,9 @@ class RegistrationTest extends TestCase
 
     public function test_a_user_can_register_with_valid_email()
     {
+        // Given registration is open
+        config()->set('settings.open-registration', true);
+
         // Given we have proper data
         $attr = [
             'first_name' => 'Wyatt',
@@ -60,6 +63,9 @@ class RegistrationTest extends TestCase
 
     public function test_a_user_cannot_register_with_invalid_email()
     {
+        // Given registration is open
+        config()->set('settings.open-registration', true);
+        
         // Given we have invalid data
         $attr = [
             'first_name' => 'Wyatt',
