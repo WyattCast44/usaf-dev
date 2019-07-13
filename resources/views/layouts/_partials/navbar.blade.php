@@ -1,4 +1,4 @@
-<nav class="tw-py-6 tw-shadow-md tw-border-b tw-border-solid tw-border-gray-400 tw-bg-white">
+<nav class="tw-py-6 tw-shadow-md tw-border-b tw-border-solid tw-border-gray-400 tw-bg-white tw-px-2">
     <div class="container-fluid tw-flex tw-items-center tw-justify-between">
 
         <!-- Logo -->
