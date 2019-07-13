@@ -52,7 +52,7 @@ class RegistrationTest extends TestCase
         $res = $this->post('/register', $attr);
 
         // We should redirected to the "home" page
-        $res->assertRedirect('/home');
+        $res->assertRedirect('/dashboard');
 
         // And the database should have the new user
         $this->assertDatabaseHas('users', ['email' => $attr['email']]);

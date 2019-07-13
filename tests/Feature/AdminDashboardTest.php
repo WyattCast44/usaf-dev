@@ -3,10 +3,10 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Users\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class PasswordResetTest extends TestCase
+class AdminDashboardTest extends TestCase
 {
     use RefreshDatabase;
 
