@@ -21,11 +21,19 @@ class UserTest extends TestCase
         // But we can make them an admin
         $admin = $nonAdmin->makeAdmin();
 
+        // They should be an admin
         $this->assertTrue($admin->isAdmin());
     }
 
     public function test_an_admin_user_can_be_made_not_an_admin()
     {
-        //
+        // Given we have a user who is an admin
+        $admin = create(User::class)->makeAdmin();
+
+        // When we remove the admin flag
+        $admin->removeAdmin();
+
+        // They should no longer be and admin
+        $this->assertFalse($admin->isAdmin());
     }
 }
