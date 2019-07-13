@@ -10,3 +10,7 @@ used by squadrons and individuals.
 ## Validation
 
 -   Email must be a us.af.mil email address
+
+## Admins
+
+-   Can view admin dashboard
