@@ -24,4 +24,21 @@ return [
     |
     */
     'min-password-length' => 8,
+
+    /*
+    |
+    | Passport Client Types
+    |
+    */
+    'passport_client_types' => [
+        
+        'first-party' => [
+            'name' => 'First Party',
+            'description' => 'First party applications, that have full access.',
+            'scopes' => [
+                '*'
+            ]
+        ],
+
+    ],
 ];
