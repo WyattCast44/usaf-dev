@@ -1,7 +1,7 @@
 <?php
 
-use App\Utilities\DatabaseSeeder as BaseSeeder;
 use App\Models\Users\User;
+use App\Utilities\DatabaseSeeder as BaseSeeder;
 
 class UsersTableSeeder extends BaseSeeder
 {
@@ -19,7 +19,7 @@ class UsersTableSeeder extends BaseSeeder
 
     public function createDefaultUser()
     {
-        factory(User::class, 3)->create([
+        factory(User::class)->create([
             'first_name' => 'Wyatt',
             'middle_name' => null,
             'last_name' => 'Castaneda',
