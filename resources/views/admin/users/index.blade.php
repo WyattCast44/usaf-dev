@@ -15,9 +15,6 @@
             <li class="nav-item">
                 <a class="nav-link hover:tw-bg-white" href="#">Create User</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">Import Users</a>
-            </li>
         </ul>
 
     </div>
@@ -26,31 +23,44 @@
 
 <main class="tw-m-12">
 
-    <h3 class="tw-text-2xl tw-mb-6">All Users</h3>
+    <h3 class="table-responsive tw-text-2xl tw-mb-6">All Users</h3>
 
-    <div class="table-responsive">
+    <div class="overflow-x-scroll tw-shadow-md tw-rounded-lg">
 
-        <table class="table">
-            <thead class="tw-rounded tw-bg-gray-200">
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Email Verified</th>
+        <table class="tw-w-full tw-bg-gray-100 tw-border-gray-400">
+
+            <thead class="tw-bg-gray-200">
+                <tr class="">
+                    <th class="tw-p-3" scope="col">Name</th>
+                    <th class="tw-p-3" scope="col">Email</th>
+                    <th class="tw-p-3" scope="col">Email Verified</th>
+                    <th class="tw-p-3" scope="col"></th>
                 </tr>
             </thead>
+
             <tbody>
                 
                 @foreach($users as $user)
 
-                    <tr>
-                        <th>{{ $user->display_name }}</th>
-                        <td>{{ $user->email }}</td>
+                    <tr class="tw-border-b tw-border-solid tw-border-gray-300">
+                        <td>{{ $user->display_name }}</td>
+                        <td class="tw-flex items-center">
+                            {{ $user->email }} 
+                            <a href="mailto:{{ $user->email }}" class="tw-text-gray-500 hover:tw-text-blue-600"
+                                 title="Email user">@svg('mail', 'tw-w-4 tw-ml-2')
+                            </a>
+                        </td>
                         <td>
                             @if($user->email_verified_at)
                                 <span class="tw-text-green-500">@svg('check-circle', 'fill-current')</span> 
                             @else
                             <span class="tw-text-red-500">@svg('x-circle', 'fill-current')</span>
                             @endif
+                        </td>
+                        <td class="text-right">
+                            <a href="#" class="tw-text-gray-500">
+                                @svg('chevron-right')
+                            </a>
                         </td>
                     </tr>
 
@@ -62,5 +72,16 @@
     </div>
 
 </main>
+
+@push('styles')
+<style>
+    td, th {
+        padding: 0.75rem !important;
+    }
+    tbody > tr:hover {
+        background: #CBD5E0;
+    }
+</style>
+@endpush
 
 @endsection

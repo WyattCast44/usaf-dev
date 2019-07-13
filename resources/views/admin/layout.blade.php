@@ -4,7 +4,7 @@
 
 <div class="tw-flex">
 
-    <aside class="tw-bg-gray-300 tw-h-screen shadow-md" style="width:225px;">
+    <aside class="tw-bg-gray-300 tw-h-screen tw-shadow-md" style="width:225px;">
 
         <ul>
             <li class="hover:tw-bg-gray-400 {{ applyActive('admin.dashboard', 'tw-bg-gray-500') }}">
@@ -47,7 +47,7 @@
 
     </aside>
 
-    <main class="tw-flex-1">
+    <main class="tw-flex-1 overflow-hidden">
 
         @yield('page-content')
         

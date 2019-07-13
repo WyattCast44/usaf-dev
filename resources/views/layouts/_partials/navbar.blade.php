@@ -35,11 +35,11 @@
                 <nav class="tw-flex tw-items-center">
 
                     <div class="dropdown">
-                        <a class="btn btn-link dropdown-toggle tw-py-0 hover:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-link dropdown-toggle tw-p-0 hover:tw-no-underline focus:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ auth()->user()->display_name }}
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="user-profile-menu">
+                        <div class="dropdown-menu dropdown-menu-right tw-mt-3" aria-labelledby="user-profile-menu">
                             <!-- User Menu -->
                             <a class="dropdown-item" href="{{ route('user.dashboard') }}">Dashboard</a>
 
