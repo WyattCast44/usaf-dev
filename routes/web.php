@@ -5,9 +5,9 @@ Auth::routes(['register' => config('setting.open-registration'), 'verify' => tru
 Route::view('/', 'welcome');
 
 Route::get('/auth/cac', function () {
+    dd($_SERVER);
+    
     if ($_SERVER['SSL_CLIENT_VERIFY'] === "NONE") {
         dd('error');
     }
-    
-    dd($_SERVER);
 });
