@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
         'open-registration' => \App\Http\Middleware\OpenRegistration::class,
         'allow-password-resets' => \App\Http\Middleware\AllowPasswordResets::class,
+        'password-reset-required' => \App\Http\Middleware\PasswordResetRequired::class,
     ];
 
     /**
