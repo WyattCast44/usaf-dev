@@ -3,9 +3,9 @@
 
         <!-- Logo -->
         <div>
-            <h1 class="tw-text-xl tw-leading-none mb-0">
-                <a href="/" class="tw-text-gray-900 hover:tw-text-gray-900 hover:tw-no-underline">
-                    USAF Cloud @svg('cloud-lightning', 'ml-1')
+            <h1 class="tw-text-xl tw-leading-none mb-0 relative">
+                <a href="/" class="tw-text-gray-900 hover:tw-text-gray-900 hover:tw-no-underline tw-flex tw-items-center">
+                    USAF Cloud @svg('cloud-lightning', 'ml-2')
                 </a>
             </h1>  
         </div>
@@ -29,19 +29,18 @@
             @auth
                 <nav class="tw-flex tw-items-center">
 
-                    <a href="{{ route('users.dashboard') }}" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-no-underline hover:tw-no-underline">
-                        @svg('home')
-                    </a>
-
                     <div class="dropdown">
-                        <a class="btn btn-link dropdown-toggle hover:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-link dropdown-toggle tw-py-0 hover:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ auth()->user()->display_name }}
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="user-profile-menu">
                             <!-- User Menu -->
-                            <a class="dropdown-item" href="#">My Profile</a>
-                            <a class="dropdown-item" href="#">My Notifications</a>
+                            <a class="dropdown-item" href="{{ route('user.dashboard') }}">Dashboard</a>
+
+                            @if(auth()->user()->isAdmin())
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                            @endif
                             
                             <!-- Logout -->
                             <div class="dropdown-divider"></div>

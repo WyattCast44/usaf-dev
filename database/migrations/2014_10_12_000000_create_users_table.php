@@ -37,6 +37,7 @@ class CreateUsersTable extends Migration
             $table->boolean('password_reset_required')->default(false);
             $table->timestamp('last_password_reset')->nullable()->default(now());
             $table->timestamp('last_login')->nullable();
+            $table->boolean('admin')->default(false);
             
             // Meta
             $table->rememberToken();

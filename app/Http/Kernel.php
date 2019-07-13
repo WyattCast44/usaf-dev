@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         
         // Custom Middleware
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
         'open-registration' => \App\Http\Middleware\OpenRegistration::class,
         'allow-password-resets' => \App\Http\Middleware\AllowPasswordResets::class,
     ];

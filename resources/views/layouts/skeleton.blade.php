@@ -9,7 +9,7 @@
     @include('layouts._partials.styles')
     @include('layouts._partials.meta')
 </head>
-<body class="tw-font-sans tw-text-black tw-leading-tight tw-antialiased tw-bg-gray-100">
+<body class="tw-font-sans tw-text-black tw-leading-tight tw-antialiased tw-bg-white">
 
     @yield('body')
 

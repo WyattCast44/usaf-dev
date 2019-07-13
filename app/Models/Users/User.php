@@ -40,6 +40,24 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Abilities/Actions/Behavior
      */
+    public function isAdmin()
+    {
+        return ($this->admin == true) ? true : false;
+    }
+
+    public function makeAdmin()
+    {
+        $this->update(['admin' => true]);
+
+        return $this->refresh();
+    }
+
+    public function removeAdmin()
+    {
+        $this->update(['admin' => false]);
+
+        return $this->refresh();
+    }
 
     /**
      * Relations

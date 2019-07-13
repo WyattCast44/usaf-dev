@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
  * given route, with wildcard support
  */
 
-function applyActive($route_name) // 'data.motors.*
+function applyActive($route_name, $class = 'active') // 'data.motors.*
 {
     $currentRouteName = Route::current()->getName();
 
@@ -16,5 +16,5 @@ function applyActive($route_name) // 'data.motors.*
         $currentRouteName = implode('.', explode('.', $currentRouteName, -1));
     }
 
-    return ($currentRouteName === $route_name) ? 'active' : '';
+    return ($currentRouteName === $route_name) ? $class : '';
 }
