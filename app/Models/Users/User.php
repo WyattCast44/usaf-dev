@@ -80,7 +80,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public static function rules($rule = null)
     {
-        return [
+        $rules = [
             'first_name' => ['required', 'string', 'max:255'],
             'middle_name' => ['nullable', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -92,5 +92,11 @@ class User extends Authenticatable implements MustVerifyEmail
             'avatar' => ['nullable', 'image'],
             'password' => ['required', 'string', 'confirmed', new PasswordMinLength],
         ];
+
+        if ($rule == null) {
+            return $rules;
+        }
+
+        return [$rule => $rules[$rule]];
     }
 }
