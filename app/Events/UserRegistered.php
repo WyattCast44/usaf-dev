@@ -8,7 +8,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 
 class UserRegistered
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable, SerializesModels;
 
     public $user;
 
