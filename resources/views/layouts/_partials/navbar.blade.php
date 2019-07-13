@@ -1,53 +1,59 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    <div class="container">
+<nav class="tw-p-6 tw-shadow-md tw-border-b tw-border-solid tw-border-gray-400 tw-bg-white">
+    <div class="container-fluid tw-flex tw-items-center tw-justify-between">
 
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
+        <!-- Logo -->
+        <div>
+            <h1 class="tw-text-xl tw-leading-none mb-0">
+                <a href="/" class="tw-text-gray-900 hover:tw-text-gray-900 hover:tw-no-underline">
+                    USAF Cloud @svg('cloud-lightning', 'ml-1')
+                </a>
+            </h1>  
+        </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Menu -->
+        <div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            @guest
 
-            </ul>
+                <nav class="tw-flex tw-items-center">
+                    <a href="/login" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl">
+                        Login
+                    </a>
+                    <a href="/register" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl">
+                        Register
+                    </a>
+                </nav>
 
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+            @endguest
+
+            @auth
+                <nav class="tw-flex tw-items-center">
+
+                    <a href="{{ route('users.dashboard') }}" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-no-underline hover:tw-no-underline">
+                        @svg('home')
+                    </a>
+
+                    <div class="dropdown">
+                        <a class="btn btn-link dropdown-toggle hover:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ auth()->user()->display_name }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <div class="dropdown-menu" aria-labelledby="user-profile-menu">
+                            <!-- User Menu -->
+                            <a class="dropdown-item" href="#">My Profile</a>
+                            <a class="dropdown-item" href="#">My Notifications</a>
+                            
+                            <!-- Logout -->
+                            <div class="dropdown-divider"></div>
+                            <form action="{{ route('logout') }}" method="post">
                                 @csrf
+                                <button class="dropdown-item"  type="submit">Logout</button>
                             </form>
                         </div>
-                    </li>
-                @endguest
-            </ul>
+                    </div>
+
+                </nav>
+            @endauth
 
         </div>
 

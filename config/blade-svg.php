@@ -68,5 +68,5 @@ return [
     |
     */
 
-    'class' => 'inline-block',
+    'class' => 'tw-inline-block',
 ];

@@ -1,5 +1,7 @@
 @extends('auth.layout')
 
+@section('page-title', 'Register')
+
 @section('content')
 
 <div class="container">

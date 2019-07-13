@@ -50,6 +50,14 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Accessors/Mutators
+     */
+    public function getDisplayNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
      * Validation
      */
     public static function rules($rule = null)
