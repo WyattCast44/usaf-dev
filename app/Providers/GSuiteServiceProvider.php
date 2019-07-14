@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Services\GSuite\GSuite;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
 class GSuiteServiceProvider extends ServiceProvider
 {
@@ -27,5 +28,15 @@ class GSuiteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [GSuite::class];
     }
 }
