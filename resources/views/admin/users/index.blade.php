@@ -77,15 +77,4 @@
 
 </main>
 
-@push('styles')
-<style>
-    td, th {
-        padding: 0.75rem !important;
-    }
-    tbody > tr:hover {
-        background: #CBD5E0;
-    }
-</style>
-@endpush
-
 @endsection

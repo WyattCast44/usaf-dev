@@ -32,7 +32,7 @@
             </li>
 
             <li class="hover:tw-bg-gray-400">
-                <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
+                <a href="{{ route('admin.apps.index') }}" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center {{ applyActive('admin.apps.*', 'tw-bg-gray-500') }}">
                     @svg('package', 'mr-3') Apps
                 </a>
             </li>    

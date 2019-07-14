@@ -10,6 +10,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Passport\Token;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -63,6 +64,11 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Relations
      */
+    public function apps()
+    {
+        return $this->hasMany(Token::class)->where('revoked', false);
+    }
+
     public function gender()
     {
         return $this->belongsTo(Gender::class);
@@ -74,6 +80,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getDisplayNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
     }
 
     /**
