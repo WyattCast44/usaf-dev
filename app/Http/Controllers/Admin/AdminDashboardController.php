@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-class AdminDashboardController extends Controller
+use App\Http\Controllers\Controller;
+
+class DashboardController extends Controller
 {
     public function __construct()
     {
