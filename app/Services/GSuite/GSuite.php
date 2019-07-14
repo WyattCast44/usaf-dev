@@ -19,6 +19,10 @@ class GSuite
      */
     protected $directory_client;
 
+    /**
+     * Bootstrap the service
+     * @return GSuite
+     */
     public function __construct()
     {
         $this->setConfig()
@@ -28,6 +32,10 @@ class GSuite
         return $this;
     }
 
+    /**
+     * Set the configuration file
+     * @return GSuite
+     */
     protected function setConfig()
     {
         $this->config = config('gsuite');
@@ -35,6 +43,10 @@ class GSuite
         return $this;
     }
 
+    /**
+     * Set the $google_client
+     * @return GSuite
+     */
     protected function setGoogleClient()
     {
         // Set the credentials in the env
@@ -51,6 +63,10 @@ class GSuite
         return $this;
     }
 
+    /**
+     * Set the $directory_client
+     * @return GSuite
+     */
     protected function setDirectoryClient()
     {
         $this->directory_client = new \Google_Service_Directory($this->google_client);
