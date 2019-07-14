@@ -24,7 +24,7 @@
             @foreach ($clients as $app)
                 
                 <tr>
-                    <td class="tw-text-center">
+                    <td>
                         {{ $app->id }}
                     </th>
                     <td>
@@ -35,7 +35,7 @@
                             {{ $app->homepage_url }}
                         </a>
                     </td>
-                    <td class="tw-text-center">
+                    <td>
                         <span class="badge badge-pill tw-py-2 tw-px-3
                     {{ ($app->revoked) ? 'badge-danger' : 'badge-success' }}">
                             {{ ($app->revoked) ? 'Revoked' : 'Active' }}
@@ -45,11 +45,15 @@
                         @if($app->first_party)
                             <span class="tw-text-green-600">
                                 @svg('circle-check')
-                            </span>                            
+                            </span>      
+                        @else
+                            <span class="tw-text-red-600">
+                                @svg('x-circle')
+                            </span>           
                         @endif
                     </td>
-                    <td>
-                        <a href="{{ route('app.admin.api.show', $app) }}">
+                    <td class="tw-text-right">
+                        <a href="#">
                             @svg('chevron-right')
                         </a>
                     </td>

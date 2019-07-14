@@ -6,7 +6,7 @@
 
     <div class="tw-mx-8">
 
-        <h2 class="tw-text-2xl tw-mb-8">Admin Dashboard</h2>
+        <h3 class="tw-text-3xl tw-mb-8">Admin Dashboard</h3>
 
         <ul class="nav nav-tabs" style="border:none">
             <li class="nav-item">

@@ -6,7 +6,7 @@
 
     <div class="tw-mx-12">
 
-        <h2 class="tw-text-2xl tw-mb-8">Manage Users</h2>
+        <h3 class="tw-text-3xl tw-mb-8">Manage Users</h2>
 
         <ul class="nav nav-tabs" style="border:none">
             <li class="nav-item">
