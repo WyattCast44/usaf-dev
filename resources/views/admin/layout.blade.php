@@ -6,7 +6,7 @@
 
     <aside class="tw-bg-gray-300 tw-h-screen tw-shadow-md" style="width:225px;">
 
-        <ul>
+        <ul class="tw-text-gray-800">
             <li class="hover:tw-bg-gray-400 {{ applyActive('admin.dashboard', 'tw-bg-gray-500') }}">
                 <a href="{{ route('admin.dashboard') }}" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900 tw-flex tw-items-center">
                     @svg('home', 'mr-3') Dashboard

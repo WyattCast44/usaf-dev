@@ -26,4 +26,10 @@
 
 </div>
 
+<main class="tw-mt-12">
+
+    <data-table endpoint="{{ route('datatables.users') }}"></data-table>
+
+</main>
+
 @endsection

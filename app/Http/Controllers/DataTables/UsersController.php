@@ -15,7 +15,7 @@ class UsersController extends DataTableController
     protected function getDisplayableColumns()
     {
         return [
-            'id', 'first_name', 'middle_name', 'last_name', 'email', 'email_verified_at', 'admin', 'avatar'
+            'first_name', 'middle_name', 'last_name', 'email', 'email_verified_at', 'admin', 'avatar'
         ];
     }
 }
