@@ -1,4 +1,5 @@
 <?php
+use App\Services\GSuite\GSuite;
 
 Route::view('/', 'welcome');
 
@@ -9,3 +10,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::get('/data/users', 'DataTables\UsersController@index')->name('datatables.users');
+
+Route::get('/test', function () {
+    $g = app(GSuite::class);
+    dd($g);
+});
