@@ -6,7 +6,7 @@
 
     <div class="col-md-6">
 
-            <h3 class="tw-text-2xl tw-mb-6">Create New App</h3>
+            <h3 class="tw-text-2xl tw-mb-8">Create New App</h3>
 
             <form action="{{ route('admin.apps.index') }}" method="POST" enctype="multipart/form-data">
             
@@ -78,19 +78,29 @@
                 </div>
 
                 <div class="form-group row">
-                        <label for="description" class="col-sm-3 col-form-label">App Description</label>
-                        <div class="col-sm-9">
-                            <textarea class="form-control" id="description" name="description" required></textarea>
-                            <small id="description_help" class="form-text text-muted">
-                                Required. A short description of what your app is and why the user should approve it.
-                            </small>
-                
-                            @error('description')
-                                @include('components.error')
-                            @enderror
-                
+                    <label for="description" class="col-sm-3 col-form-label">App Description</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="description" name="description" required></textarea>
+                        <small id="description_help" class="form-text text-muted">
+                            Required. A short description of what your app is and why the user should approve it.
+                        </small>
+            
+                        @error('description')
+                            @include('components.error')
+                        @enderror
+            
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="first_party" class="col-sm-3 col-form-label">First Party App</label>
+                    <div class="col-sm-9">
+                        <div class="custom-control custom-switch mt-2">
+                            <input type="checkbox" class="custom-control-input" id="first_party" name="first_party">
+                            <label class="custom-control-label" for="first_party"></label>
                         </div>
                     </div>
+                </div>
             
                 <div class="tw-flex tw-justify-end tw-mt-8">
                     <a href="{{ route('admin.apps.index') }}" class="btn btn-link tw-mr-2">Cancel</a>

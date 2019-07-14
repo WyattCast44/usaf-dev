@@ -32,6 +32,7 @@ class AppsController extends Controller
             'homepage_url' => 'required|url',
             'avatar' => 'nullable|image',
             'redirect' => 'required|url',
+            'first_party' => 'nullable',
         ]);
 
         $client = Client::create([
@@ -45,6 +46,7 @@ class AppsController extends Controller
             'personal_access_client' => false,
             'password_client' => false,
             'revoked' => false,
+            'first_party' => ($request->has('first_party')) ? true : false,
         ]);
 
         return redirect()->route('admin.apps.index');

@@ -44,7 +44,7 @@
                     <td>
                         @if($app->first_party)
                             <span class="tw-text-green-600">
-                                @svg('circle-check')
+                                @svg('check-circle')
                             </span>      
                         @else
                             <span class="tw-text-red-600">
