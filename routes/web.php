@@ -13,6 +13,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/data/users', 'DataTables\UsersController@index')->name('datatables.users');
 
-Route::get('/test', function (GSuite $gsuite, GSuiteUserRepository $users) {
-    dd($gsuite, $users);
+Route::get('/test', function (GSuiteUserRepository $users) {
+    dd($users->fetchAll());
 });

@@ -12,12 +12,12 @@ class GSuite
     /**
      * The Google API Client
      */
-    protected $google_client;
+    public $google_client;
 
     /**
      * The Google Directory Client
      */
-    protected $directory_client;
+    public $directory_client;
 
     /**
      * Bootstrap the service
