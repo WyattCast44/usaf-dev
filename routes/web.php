@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\GSuite\GSuite;
+use App\Services\GSuite\GSuiteUserRepository;
 
 Route::view('/', 'welcome');
 
@@ -12,6 +13,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/data/users', 'DataTables\UsersController@index')->name('datatables.users');
 
-Route::get('/test', function (GSuite $gsuite) {
-    dd($gsuite);
+Route::get('/test', function (GSuite $gsuite, GSuiteUserRepository $users) {
+    dd($gsuite, $users);
 });

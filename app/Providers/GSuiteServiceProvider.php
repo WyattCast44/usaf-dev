@@ -20,19 +20,9 @@ class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvide
             return new GSuite;
         });
 
-        $this->app->singleton(GSuiteUserRepository::class, function ($app) {
+        $this->app->bind(GSuiteUserRepository::class, function ($app) {
             return new GSuiteUserRepository;
         });
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
     }
 
     /**
