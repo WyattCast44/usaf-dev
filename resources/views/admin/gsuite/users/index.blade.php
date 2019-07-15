@@ -6,7 +6,7 @@
     <div>
         <h3 class="tw-text-2xl tw-mb-2">All Accounts</h3>
         <p class="tw-text-gray-500">
-            Each is a fully featured GSuite account
+            Each is a fully featured G Suite account
         </p>
     </div>
 
