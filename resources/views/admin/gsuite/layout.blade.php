@@ -16,7 +16,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.users.index') }}" href="#">
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.accounts.*') }}" href="{{ route('admin.gsuite.accounts.index') }}">
                     Accounts
                 </a>
             </li>

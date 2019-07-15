@@ -4,7 +4,7 @@ namespace App\Services\GSuite;
 
 use Illuminate\Support\Collection;
 
-class GSuiteUserRepository
+class GSuiteAccountsRepository
 {
     /**
      * Google Directory Client
