@@ -9,6 +9,12 @@ mix.js("resources/js/app.js", "public/js")
         postCss: [tailwindcss("tailwind.config.js")]
     });
 
+mix.webpackConfig({
+    watchOptions: {
+        ignored: "/node_modules/"
+    }
+});
+
 if (mix.inProduction()) {
     mix.version();
 }

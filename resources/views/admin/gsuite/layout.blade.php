@@ -10,19 +10,19 @@
 
         <ul class="nav nav-tabs" style="border:none">
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.index') }}" href="#">
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.index') }}" href="{{ route('admin.gsuite.index') }}">
                     Overview
                 </a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.users.index') }}" href="#">
-                    Users
+                    Accounts
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.groups.index') }}" href="#">
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.groups.*') }}" href="{{ route('admin.gsuite.groups.index') }}">
                     Groups
                 </a>
             </li>
