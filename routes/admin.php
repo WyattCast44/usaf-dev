@@ -12,3 +12,6 @@ Route::get('/dashboard/users', 'Admin\UsersController@index')->name('admin.users
 
 // GSuite
 Route::get('/dashboard/gsuite', 'Admin\GSuiteController@index')->name('admin.gsuite.index');
+
+// Security
+Route::get('/dashboard/security', 'Admin\SecurityController@index')->name('admin.security.index');

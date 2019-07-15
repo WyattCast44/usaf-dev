@@ -35,20 +35,15 @@
                 <a href="{{ route('admin.apps.index') }}" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center {{ applyActive('admin.apps.*', 'tw-bg-gray-500') }}">
                     @svg('package', 'mr-3') Apps
                 </a>
-            </li>    
-
-            <li class="hover:tw-bg-gray-400">
-                <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
-                    @svg('user-check', 'mr-3') Roles
-                </a>
             </li>
 
             <li class="hover:tw-bg-gray-400">
-                <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
-                    @svg('lock', 'mr-3') Permissions
+                <a href="{{ route('admin.security.index') }}" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center {{ applyActive('admin.security.*', 'tw-bg-gray-500') }}">
+                    @svg('lock', 'mr-3') Security
                 </a>
             </li>
 
+            <!-- Services -> A collection of integrted APIs for common tools, example: Have a dashboard for Squadron Ops Center App -> where you can create a new "site" and assign the owner -->
             <li class="hover:tw-bg-gray-400">
                 <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
                     @svg('layers', 'mr-3') Services
