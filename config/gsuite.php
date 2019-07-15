@@ -26,10 +26,20 @@ return [
     |--------------------------------------------------------------------------
     | The scopes requested
     | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    | @link https://admin.google.com/usaf.cloud/AdminHome?chromeless=1#OGX:ManageOauthClients
     */
     'scopes' => [
         'https://www.googleapis.com/auth/admin.directory.user',
-        'https://www.googleapis.com/auth/admin.directory.group',
+        'https://www.googleapis.com/auth/admin.directory.group'
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Domain
+    |--------------------------------------------------------------------------
+    | Your domain
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'domain' => 'usaf.cloud'
         
 ];

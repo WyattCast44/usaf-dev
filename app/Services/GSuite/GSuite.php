@@ -73,4 +73,17 @@ class GSuite
 
         return $this;
     }
+
+    /**
+     * List the public methods
+     */
+    public function methods()
+    {
+        return [
+            'provision' => 'Provision a new gsuite account',
+            'delete' => 'Delete a provisioned gsuite account',
+            'suspend' => 'Suspend a current gsuite account',
+            'fetch' => 'Fetch the details all users, or all users.'
+        ];
+    }
 }

@@ -5,8 +5,9 @@ namespace App\Providers;
 use App\Services\GSuite\GSuite;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use App\Services\GSuite\GSuiteUserRepository;
 
-class GSuiteServiceProvider extends ServiceProvider
+class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.
@@ -17,6 +18,10 @@ class GSuiteServiceProvider extends ServiceProvider
     {
         $this->app->singleton(GSuite::class, function ($app) {
             return new GSuite;
+        });
+
+        $this->app->singleton(GSuiteUserRepository::class, function ($app) {
+            return new GSuiteUserRepository;
         });
     }
 
@@ -37,6 +42,6 @@ class GSuiteServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [GSuite::class];
+        return [GSuite::class, GSuiteUserRepository::class];
     }
 }
