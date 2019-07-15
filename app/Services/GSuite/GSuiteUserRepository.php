@@ -29,9 +29,7 @@ class GSuiteUserRepository
             return $this->directory_client->users->get($email, ['projection' => 'full']);
         }
 
-        $users = collect($this->directory_client->users->listUsers(['domain' => config('gsuite.domain')])->users);
-
-        return $users;
+        return collect($this->directory_client->users->listUsers(['domain' => config('gsuite.domain')])->users);
     }
 
     /**
