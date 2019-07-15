@@ -10,10 +10,6 @@
             </h1>  
         </div>
 
-        <div class="tw-flex-1 tw-mx-8">
-            <input type="text" class="form-control" placeholder="Search...">
-        </div>
-
         <!-- Menu -->
         <div>
 
