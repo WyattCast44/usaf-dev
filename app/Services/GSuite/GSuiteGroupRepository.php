@@ -46,12 +46,4 @@ class GSuiteGroupRepository
     {
         return $this->directory_client->groups->delete($email);
     }
-
-    /**
-     *
-     */
-    public function members($email)
-    {
-        return $this->directory_client->groups->get($email);
-    }
 }
