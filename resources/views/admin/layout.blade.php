@@ -26,8 +26,8 @@
             </li>
 
             <li class="hover:tw-bg-gray-400">
-                <a href="#" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center">
-                    @svg('chrome', 'mr-3') GSuite Accounts
+                <a href="{{ route('admin.gsuite.index') }}" class="tw-p-4 tw-block hover:tw-no-underline hover:tw-text-gray-900  tw-flex tw-items-center {{ applyActive('admin.gsuite.*', 'tw-bg-gray-500') }}">
+                    @svg('chrome', 'mr-3') GSuite 
                 </a>
             </li>
 

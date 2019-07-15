@@ -9,3 +9,6 @@ Route::get('/dashboard/apps/create', 'Admin\AppsController@create')->name('admin
 
 // Users...
 Route::get('/dashboard/users', 'Admin\UsersController@index')->name('admin.users.index');
+
+// GSuite
+Route::get('/dashboard/gsuite', 'Admin\GSuiteController@index')->name('admin.gsuite.index');
