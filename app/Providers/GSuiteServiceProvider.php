@@ -4,8 +4,9 @@ namespace App\Providers;
 
 use App\Services\GSuite\GSuite;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Support\DeferrableProvider;
 use App\Services\GSuite\GSuiteUserRepository;
+use App\Services\GSuite\GSuiteGroupRepository;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
 class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -22,6 +23,10 @@ class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvide
 
         $this->app->bind(GSuiteUserRepository::class, function ($app) {
             return new GSuiteUserRepository;
+        });
+
+        $this->app->bind(GSuiteGroupRepository::class, function ($app) {
+            return new GSuiteGroupRepository;
         });
     }
 
