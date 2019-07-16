@@ -19,4 +19,9 @@ class GSuiteAccountsController extends Controller
 
         return view('admin.gsuite.users.index', ['accounts' => $accounts]);
     }
+
+    public function create()
+    {
+        return view('admin.gsuites.users.create');
+    }
 }

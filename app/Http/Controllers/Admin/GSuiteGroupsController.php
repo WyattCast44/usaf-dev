@@ -40,7 +40,7 @@ class GSuiteGroupsController extends Controller
             'description' => $request->description
         ]);
 
-        toast('Group created!', 'success', 'top');
+        alert('Group created!', 'Your new group has been created, but may take a few minutes to appear.', 'success');
 
         return redirect()->route('admin.gsuite.groups.index');
     }
