@@ -40,6 +40,15 @@ return [
     | Your domain
     | @link https://developers.google.com/admin-sdk/directory/v1/reference/
     */
-    'domain' => 'usaf.cloud'
-        
+    'domain' => 'usaf.cloud',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cost Per User Per Month
+    |--------------------------------------------------------------------------
+    | Your domain
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'monthly_cost_per_user' => 12,
+
 ];
