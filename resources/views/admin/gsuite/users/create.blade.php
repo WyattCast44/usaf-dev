@@ -3,11 +3,8 @@
 @section('gsuite-content')
 
 <div class="tw-mb-8">
-    <a href="{{ route('admin.gsuite.groups.index') }}" class="tw-text-sm tw-text-blue-400 tw-mb-2 tw-inline-block">&leftarrow; Back</a>
+    <a href="{{ route('admin.gsuite.accounts.index') }}" class="tw-text-sm tw-text-blue-400 tw-mb-2 tw-inline-block">&leftarrow; Back</a>
     <h3 class="tw-text-2xl tw-mb-2">Create Account</h3>
-    <p class="tw-text-gray-500">
-        Think of groups as "org-boxes"
-    </p>
 </div>
 
 <form action="{{ route('admin.gsuite.groups.store') }}" method="post">
@@ -30,7 +27,7 @@
     </div>
 
     <div class="form-group tw-flex tw-justify-end tw-items-center tw-mt-6">
-        <a href="{{ route('admin.gsuite.groups.index') }}" class="btn btn-link">Cancel</a>
+        <a href="{{ route('admin.gsuite.accounts.index') }}" class="btn btn-link">Cancel</a>
         <button type="submit" class="btn btn-primary">Create Account</button>
     </div>
 

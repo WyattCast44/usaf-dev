@@ -22,6 +22,6 @@ class GSuiteAccountsController extends Controller
 
     public function create()
     {
-        return view('admin.gsuites.users.create');
+        return view('admin.gsuite.users.create');
     }
 }
