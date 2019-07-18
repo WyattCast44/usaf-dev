@@ -49,6 +49,8 @@ class RegistrationTest extends TestCase
         ];
 
         // And we attempt to register
+        $this->get('/register');
+
         $res = $this->post('/register', $attr);
 
         // We should redirected to the "home" page
