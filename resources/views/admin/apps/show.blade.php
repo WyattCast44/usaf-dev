@@ -91,6 +91,15 @@
 
             <tr>
                 <td>
+                   Redirect URL
+                </th>
+                <td>
+                    {{ $app->redirect }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
                     Created At
                 </th>
                 <td>
