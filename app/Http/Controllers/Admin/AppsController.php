@@ -51,4 +51,9 @@ class AppsController extends Controller
 
         return redirect()->route('admin.apps.index');
     }
+
+    public function show(Client $app)
+    {
+        return view('admin.apps.show', ['app' => $app]);
+    }
 }

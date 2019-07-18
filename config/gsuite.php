@@ -49,6 +49,6 @@ return [
     | Your domain
     | @link https://developers.google.com/admin-sdk/directory/v1/reference/
     */
-    'monthly_cost_per_user' => 12,
+    'monthly_cost_per_user' => 12.00,
 
 ];

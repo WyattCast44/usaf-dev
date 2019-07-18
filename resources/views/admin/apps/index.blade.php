@@ -53,7 +53,7 @@
                         @endif
                     </td>
                     <td class="tw-text-right">
-                        <a href="#">
+                        <a href="{{ route('admin.apps.show', $app) }}">
                             @svg('chevron-right')
                         </a>
                     </td>
