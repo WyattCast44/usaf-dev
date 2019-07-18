@@ -3,6 +3,7 @@
 namespace App\Services\GSuite;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 
 class GSuiteAccountsRepository
 {
@@ -19,17 +20,29 @@ class GSuiteAccountsRepository
     }
 
     /**
-     * Get GSuite account(s)
+     * Get a GSuite account
      * @param $email
-     * @return \Google_Service_Directory_User|Collection
+     * @return \Google_Service_Directory_User
      */
-    public function fetch($email = null)
+    public function get($email)
     {
-        if ($email <> null) {
-            return $this->directory_client->users->get($email, ['projection' => 'full']);
-        }
+        return $this->directory_client->users->get($email, ['projection' => 'full']);
+    }
 
-        return collect($this->directory_client->users->listUsers(['domain' => config('gsuite.domain')])->users);
+    /**
+     * Get GSuite accounts
+     * @return |Collection
+     */
+    public function fetch()
+    {
+        if (Cache::has('gsuite:accounts')) {
+            $accounts = Cache::get('gsuite:accounts', collect());
+        } else {
+            $accounts = collect($this->directory_client->users->listUsers(['domain' => config('gsuite.domain')])->users);
+
+            Cache::put('gsuite:accounts', $accounts, now()->addMinutes(30));
+        }
+        return $accounts;
     }
 
     /**
@@ -47,7 +60,7 @@ class GSuiteAccountsRepository
      */
     public function create()
     {
-        //
+        Cache::forget('gsuite:accounts');
     }
 
     /**
