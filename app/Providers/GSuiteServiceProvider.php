@@ -37,6 +37,6 @@ class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvide
      */
     public function provides()
     {
-        return [GSuite::class, GSuiteUserRepository::class];
+        return [GSuite::class, GSuiteAccountsRepository::class, GSuiteGroupRepository::class];
     }
 }
