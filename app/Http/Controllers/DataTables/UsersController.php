@@ -7,6 +7,11 @@ use App\Http\Controllers\DataTables\DataTableController;
 
 class UsersController extends DataTableController
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified', 'admin']);
+    }
+
     public function builder()
     {
         return User::query();
