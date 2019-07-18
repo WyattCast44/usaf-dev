@@ -2,6 +2,8 @@
 
 namespace App\Services\GSuite;
 
+use Illuminate\Support\Facades\Cache;
+
 class GSuiteGroupRepository
 {
     /**
@@ -22,7 +24,14 @@ class GSuiteGroupRepository
      */
     public function fetch()
     {
-        return collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
+        if (Cache::has('gsuite:groups')) {
+            $groups = Cache::get('gsuite:groups');
+        } else {
+            $groups = collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
+            Cache::add('gsuite:groups', $groups, now()->addMinutes(30));
+        }
+
+        return $groups;
     }
 
     /**
@@ -36,6 +45,8 @@ class GSuiteGroupRepository
             'description' => $attributes['description'],
         ]);
 
+        Cache::forget('gsuite:groups');
+
         return $this->directory_client->groups->insert($group);
     }
 
@@ -44,6 +55,8 @@ class GSuiteGroupRepository
      */
     public function delete($email)
     {
+        Cache::forget('gsuite:groups');
+        
         return $this->directory_client->groups->delete($email);
     }
 }
