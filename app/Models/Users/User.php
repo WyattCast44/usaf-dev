@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Passport\Token;
+use App\Models\GSuite\GSuiteAccount;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -61,6 +62,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->refresh();
     }
 
+    public function linkGSuiteAccount($email)
+    {
+        if (!$this->gsuite_accounts->pluck('email')->contains($email)) {
+            $this->gsuite_accounts()->create([
+                'email' => $email,
+                'creator_id' => (auth()->check()) ? auth()->user()->id : null,
+            ]);
+        }
+
+        return $this;
+    }
+
     /**
      * Relations
      */
@@ -72,6 +85,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function gender()
     {
         return $this->belongsTo(Gender::class);
+    }
+
+    public function gsuite_accounts()
+    {
+        return $this->morphMany(GSuiteAccount::class, 'gsuiteable');
     }
 
     /**

@@ -15,25 +15,16 @@ class CreateGSuiteAccountsTable extends Migration
     {
         Schema::create('gsuite_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
-            // GSuite
             $table->uuid('gsuiteable_id')->index()->nullable();
             $table->string('gsuiteable_type')->index()->nullable();
-            $table->string('gsuite_email')->index()->unique();
-            $table->boolean('suspended')->default(false);
-
-            // Creation Status
-            $table->boolean('creating')->default(false);
-            $table->boolean('ready')->default(false);
-
-            // Audit
             $table->uuid('creator_id')->index()->nullable();
+            $table->string('email')->index()->unique();
+            $table->timestamps();
+
             $table->foreign('creator_id')
                 ->references('id')
                 ->on('users')
                 ->onUpdate('cascade');
-
-            $table->timestamps();
         });
     }
 
@@ -44,6 +35,6 @@ class CreateGSuiteAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_suite_accounts');
+        Schema::dropIfExists('gsuite_accounts');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\GSuite\GSuiteAccount;
+namespace App\Models\GSuite;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,24 +21,24 @@ class GSuiteAccount extends Model
     /**
      * Misc/Helpers
      */
-    public static function ensureUniqueEmailAddress($base_email)
-    {
-        $base_email = preg_replace('/\s+/', '', str_replace(' ', '', $base_email));
+    // public static function ensureUniqueEmailAddress($base_email)
+    // {
+    //     $base_email = preg_replace('/\s+/', '', str_replace(' ', '', $base_email));
 
-        $count = self::where('gsuite_email', $base_email)->count();
+    //     $count = self::where('gsuite_email', $base_email)->count();
 
-        if ($count <> 0) {
-            $base_name = explode('@', $base_email)[0];
-            if (is_numeric(substr($base_name, -1, 1))) {
-                $base_name = ++$base_name;
-            } else {
-                $base_name = $base_name . '.1';
-            }
-            $base_email = $base_name . '@usaf.cloud';
-            $base_email = preg_replace('/\s+/', '', str_replace(' ', '', $base_email));
-            $base_email = self::ensureUniqueEmailAddress($base_email);
-        }
+    //     if ($count <> 0) {
+    //         $base_name = explode('@', $base_email)[0];
+    //         if (is_numeric(substr($base_name, -1, 1))) {
+    //             $base_name = ++$base_name;
+    //         } else {
+    //             $base_name = $base_name . '.1';
+    //         }
+    //         $base_email = $base_name . '@usaf.cloud';
+    //         $base_email = preg_replace('/\s+/', '', str_replace(' ', '', $base_email));
+    //         $base_email = self::ensureUniqueEmailAddress($base_email);
+    //     }
         
-        return strtolower($base_email);
-    }
+    //     return strtolower($base_email);
+    // }
 }
