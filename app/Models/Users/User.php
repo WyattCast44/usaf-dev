@@ -12,6 +12,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Passport\Token;
 use App\Models\GSuite\GSuiteAccount;
+use Illuminate\Support\Facades\Validator;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -75,6 +76,23 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Updates a users primary email address
+     * @param $email
+     * @return bool
+     */
+    public function updateEmail($email)
+    {
+        if ($this->validate('email', $email)) {
+            return false;
+        }
+
+        return $this->update([
+            'email' => $email,
+            'email_verified_at' => null
+        ]);
+    }
+
+    /**
      * Relations
      */
     public function apps()
@@ -108,6 +126,11 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Validation
      */
+    public function validate($field, $value)
+    {
+        return (Validator::make([$field => $value], $this->rules($field)))->fails();
+    }
+
     public static function rules($rule = null, $includeKey = true)
     {
         $rules = [

@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use App\Models\Users\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Reference\Gender;
 
 class UserTest extends TestCase
 {
@@ -35,5 +36,50 @@ class UserTest extends TestCase
 
         // They should no longer be and admin
         $this->assertFalse($admin->isAdmin());
+    }
+
+    public function test_a_user_can_have_a_gender()
+    {
+        // Given me have a user
+        $user = create(User::class);
+
+        // By default they don't have a gender set
+        $this->assertEquals(null, $user->gender);
+
+        // But they can have a gender
+        $gender = create(Gender::class);
+
+        $user->update([
+            'gender_id' => $gender->id,
+        ]);
+
+        $this->assertEquals($gender->id, $user->refresh()->gender->id);
+    }
+
+    public function test_if_a_user_updates_thier_email_it_becomes_unverified()
+    {
+        // Given me have a user
+        $user = create(User::class);
+
+        // And we update thier email, with a valid email
+        $status = $user->updateEmail('test.email.2@gmail');
+
+        // The status should be unsuccessful
+        $this->assertFalse($status);
+    }
+
+    public function test_if_a_user_updates_thier_email_it_has_to_pass_validation()
+    {
+        // Given me have a user
+        $user = create(User::class);
+
+        // And we update thier email, with a valid email
+        $status = $user->updateEmail('test.email.2@us.af.mil');
+
+        // The status should be successfull
+        $this->assertTrue($status);
+
+        // And the email verified flag should be false
+        $this->assertEquals(null, $user->email_verified_at);
     }
 }
