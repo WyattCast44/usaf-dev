@@ -79,10 +79,11 @@ class RegistrationTest extends TestCase
         ];
 
         // And we attempt to register
+        $this->get('/register');
         $res = $this->post('/register', $attr);
 
         // We should redirected back to the
-        $res->assertRedirect('/');
+        $res->assertRedirect('/register');
 
         // And the database should not have a new user
         $this->assertDatabaseMissing('users', ['email' => $attr['email']]);
