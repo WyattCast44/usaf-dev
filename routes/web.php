@@ -1,6 +1,4 @@
 <?php
-use App\Http\Resources\UserResource;
-use App\Models\Users\User;
 
 Route::view('/', 'welcome');
 
