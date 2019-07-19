@@ -23,6 +23,7 @@ Route::get('/dashboard/gsuite/accounts/create', 'Admin\GSuiteAccountsController@
 Route::get('/dashboard/gsuite/groups', 'Admin\GSuiteGroupsController@index')->name('admin.gsuite.groups.index');
 Route::post('/dashboard/gsuite/groups', 'Admin\GSuiteGroupsController@store')->name('admin.gsuite.groups.store');
 Route::get('/dashboard/gsuite/groups/create', 'Admin\GSuiteGroupsController@create')->name('admin.gsuite.groups.create');
+Route::get('/dashboard/gsuite/groups/show/{email}', 'Admin\GSuiteGroupsController@show')->name('admin.gsuite.groups.show');
 
 // Security
 Route::get('/dashboard/security', 'Admin\SecurityController@index')->name('admin.security.index');

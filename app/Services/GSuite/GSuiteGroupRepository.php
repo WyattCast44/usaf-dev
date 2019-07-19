@@ -19,8 +19,25 @@ class GSuiteGroupRepository
     }
 
     /**
-     * Get GSuite group(s)
-     * @return Collection
+     * Get GSuite group
+     * @return \Google_Service_Directory_Group
+     */
+    public function get($email)
+    {
+        if (Cache::has('gsuite:groups')) {
+            $group = Cache::get('gsuite:groups')->firstWhere('email', $email);
+        } else {
+            $groups = collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
+            Cache::add('gsuite:groups', $groups, now()->addMinutes(30));
+            $group = $groups->firstWhere('email', $email);
+        }
+
+        return $group;
+    }
+
+    /**
+     * Get GSuite groups
+     * @return Collection of \Google_Service_Directory_Group
      */
     public function fetch()
     {

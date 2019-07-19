@@ -21,6 +21,17 @@ class GSuiteGroupsController extends Controller
         return view('admin.gsuite.groups.index', ['groups' => $groups]);
     }
 
+    public function show(GSuiteGroupRepository $groups_repo, $email)
+    {
+        $group = $groups_repo->get($email);
+
+        if ($group === null) {
+            return abort(404);
+        }
+
+        return view('admin.gsuite.groups.show', ['group' => $group]);
+    }
+
     public function create()
     {
         return view('admin.gsuite.groups.create');
