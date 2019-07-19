@@ -3,7 +3,23 @@
 USAF.Cloud provides an OAuth2 API, which can be used for traditional API access,
 or for Single Sign On (SSO).
 
-## Authentication
+## Authorization
+
+### Endpoints
+
+#### Auth URL
+
+```
+https://usaf.cloud/oauth/authorize
+```
+
+#### Token URL
+
+```
+https://usaf.clpud/oauth/token
+```
+
+## API Authentication
 
 -   Pass the users OAuth token via a header
 
