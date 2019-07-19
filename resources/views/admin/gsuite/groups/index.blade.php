@@ -49,11 +49,8 @@
                             <a href="#" class="tw-font-semibold tw-text-blue-500 hover:tw-no-underline">Team: 12th TRS</a>
                         </td>
                         <td class="text-right">
-                            <a href="#" class="tw-text-gray-500 tw-mr-3" title="Add member">
+                            <a href="#" class="tw-text-gray-500 tw-mr-2" title="Add member">
                                 @svg('user-plus')
-                            </a>
-                            <a href="#" class="tw-text-gray-500 tw-mr-1" title="Remove member">
-                                @svg('user-minus')
                             </a>
                             <a href="{{ route('admin.gsuite.groups.show', $group->email) }}" class="tw-text-gray-500" title="View group">
                                 @svg('chevron-right')
