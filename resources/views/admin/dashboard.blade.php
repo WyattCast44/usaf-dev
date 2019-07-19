@@ -12,9 +12,6 @@
             <li class="nav-item">
                 <a class="nav-link hover:tw-bg-white {{ applyActive('admin.dashboard') }}" href="{{ route('admin.dashboard') }}">General</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">Settings</a>
-            </li>
         </ul>
 
     </div>
