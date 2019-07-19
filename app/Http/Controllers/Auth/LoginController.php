@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Events\UserLoggedIn;
 
 class LoginController extends Controller
 {
@@ -47,6 +48,8 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        event(new UserLoggedIn($user));
+
         $user->update([
             'last_login' => now(),
         ]);

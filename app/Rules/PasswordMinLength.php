@@ -15,7 +15,7 @@ class PasswordMinLength implements Rule
      */
     public function passes($attribute, $value)
     {
-        if (strlen($value) >= config('settings.min-password-length')) {
+        if (strlen($value) >= config('settings.min-password-length', 8)) {
             return true;
         }
 

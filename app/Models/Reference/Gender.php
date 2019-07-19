@@ -2,8 +2,8 @@
 
 namespace App\Models\Reference;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Users\User;
+use Illuminate\Database\Eloquent\Model;
 
 class Gender extends Model
 {
