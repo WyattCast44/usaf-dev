@@ -20,7 +20,8 @@ class UserResource extends JsonResource
                 'first_name' => $this->first_name,
                 'last_name' => $this->last_name,
                 'middle_name' => $this->middle_name,
-                'nickname' => $this->nickname
+                'nickname' => $this->nickname,
+                'full_name' => "{$this->first_name} {$this->last_name}",
             ],
             'email' => $this->email,
             'email_verified' => ($this->email_verified_at) ? true : false,

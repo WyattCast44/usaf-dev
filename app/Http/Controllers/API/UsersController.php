@@ -2,25 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Users\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 
 class UsersController extends Controller
 {
     public function show(Request $request)
     {
-        $user = $request->user();
-
-        $user->avatar = '';
+        $user = new UserResource($request->user());
 
         return $user;
-    }
-
-    public function index()
-    {
-        $users = User::all();
-        
-        return $users;
     }
 }
