@@ -68,6 +68,14 @@ class GSuiteGroupRepository
     }
 
     /**
+     * Update a new GSuite group
+     */
+    public function update($email, array $attributes)
+    {
+        //
+    }
+
+    /**
      * Delete a GSuite group
      */
     public function delete($email)
