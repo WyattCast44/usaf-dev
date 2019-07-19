@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\Users\User;
 
 class PasswordResetTest extends TestCase
 {
@@ -32,14 +31,5 @@ class PasswordResetTest extends TestCase
         
         // We should be get a valid response
         $res->assertOk();
-    }
-
-    public function test_if_password_resets_are_enabled_user_can_submit_reset_request()
-    {
-        // Given password resets are open
-        config()->set('settings.allow-password-resets', true);
-
-        // And we have a user
-        $user = create(User::class);
     }
 }

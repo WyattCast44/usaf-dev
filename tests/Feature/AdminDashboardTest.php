@@ -36,7 +36,7 @@ class AdminDashboardTest extends TestCase
         // And we visit the admin dashbaord
         $res = $this->get(route('admin.dashboard'));
 
-        // We should get a ok response
+        // We should get a not authorized response
         $res->assertStatus(403);
     }
 }
