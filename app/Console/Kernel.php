@@ -26,6 +26,9 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('gsuite:sync')
                  ->daily();
+
+        $schedule->command('passport:prune')
+                 ->daily();
     }
 
     /**

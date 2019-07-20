@@ -12,10 +12,14 @@
     
         <ul class="nav nav-tabs" style="border:none">
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('user.dashboard') }}" href="#">Home</a>
+                <a class="nav-link hover:tw-bg-white {{ applyActive('user.dashboard') }}" href="{{ route('user.dashboard') }}">
+                    Home
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">My Apps</a>
+                <a class="nav-link hover:tw-bg-white {{ applyActive('user.apps.*') }}" href="{{ route('user.apps.index') }}">
+                    My Apps
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link hover:tw-bg-white" href="#">All Apps</a>
@@ -26,15 +30,9 @@
 
 </div>
 
-<main class="tw-mt-12">
+<main class="tw-mt-12 container">
 
-    {{-- <data-table endpoint="{{ route('datatables.users') }}"></data-table> --}}
-
-    <div class="container">
-
-        
-
-    </div>
+    @yield('dashboard-content')
 
 </main>
 
