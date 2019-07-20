@@ -16,10 +16,10 @@
             @guest
 
                 <nav class="tw-flex tw-items-center">
-                    <a href="/login" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-font-light">
+                    <a href="/login" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-font-normal">
                         Login
                     </a>
-                    <a href="/register" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-font-light">
+                    <a href="/register" class="tw-px-3 tw-mx-2 tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl tw-font-normal">
                         Register
                     </a>
                 </nav>
