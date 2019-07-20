@@ -1,27 +1,6 @@
-@extends('admin.layout')
+@extends('admin.users.layout')
 
-@section('page-content')
-
-<header class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300  tw-pt-10">
-
-    <div class="tw-mx-12">
-
-        <h3 class="tw-text-3xl tw-mb-8">Manage Users</h2>
-
-        <ul class="nav nav-tabs" style="border:none">
-            <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.index') }}" href="#">All Users</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">Create User</a>
-            </li>
-        </ul>
-
-    </div>
-
-</header>
-
-<main class="tw-m-12">
+@section('user-content')
 
     <h3 class="table-responsive tw-text-2xl tw-mb-6">All Users</h3>
 
@@ -31,7 +10,8 @@
 
             <thead class="tw-bg-gray-200">
                 <tr class="">
-                    <th class="tw-p-3" scope="col">Name</th>
+                    <th class="tw-p-3" scope="col">Last Name</th>
+                    <th class="tw-p-3" scope="col">First Name</th>
                     <th class="tw-p-3" scope="col">Email</th>
                     <th class="tw-p-3" scope="col">Email Verified</th>
                     <th class="tw-p-3" scope="col">Last Login</th>
@@ -44,11 +24,11 @@
                 @foreach($users as $user)
 
                     <tr class="tw-border-b tw-border-solid tw-border-gray-300">
-                        <td>{{ $user->display_name }}</td>
+                        <td>{{ $user->last_name }}</td>
+                        <td>{{ $user->first_name }}</td>
                         <td class="tw-flex items-center">
-                            {{ $user->email }} 
-                            <a href="mailto:{{ $user->email }}" class="tw-text-gray-500 hover:tw-text-blue-600"
-                                 title="Email user">@svg('mail', 'tw-w-4 tw-ml-2')
+                            <a href="mailto:{{ $user->email }}" class="tw-text-blue-400 hover:tw-text-blue-600" title="Email user">
+                                 {{ $user->email }} 
                             </a>
                         </td>
                         <td>
@@ -62,7 +42,7 @@
                             {{ ($user->last_login <> null) ? $user->last_login->diffForHumans() : "Hasn't loggen in yet"}}
                         </td>
                         <td class="text-right">
-                            <a href="#" class="tw-text-gray-500">
+                            <a href="{{ route('admin.users.show', $user) }}" class="tw-text-gray-500">
                                 @svg('chevron-right')
                             </a>
                         </td>
@@ -73,6 +53,10 @@
             </tbody>
         </table>
 
+    </div>
+
+    <div class="tw-my-6">
+        {{ $users->links() }}
     </div>
 
 </main>

@@ -10,6 +10,7 @@ Route::get('/dashboard/apps/{app}', 'Admin\AppsController@show')->name('admin.ap
 
 // Users...
 Route::get('/dashboard/users', 'Admin\UsersController@index')->name('admin.users.index');
+Route::get('/dashboard/users/{user}', 'Admin\UsersController@show')->name('admin.users.show');
 
 // GSuite
 Route::get('/dashboard/gsuite', 'Admin\GSuiteController@index')->name('admin.gsuite.index');

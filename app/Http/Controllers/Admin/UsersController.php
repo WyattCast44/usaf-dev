@@ -14,6 +14,11 @@ class UsersController extends Controller
     
     public function index()
     {
-        return view('admin.users.index', ['users' => User::all()]);
+        return view('admin.users.index', ['users' => User::paginate(10)]);
+    }
+
+    public function show(User $user)
+    {
+        return view('admin.users.show', ['user' => $user]);
     }
 }

@@ -9,7 +9,7 @@ class UsersTableSeeder extends BaseSeeder
     {
         $this->createDefaultUser();
 
-        factory(User::class, 3)->create();
+        factory(User::class, 20)->create();
     }
 
     public function prod()
