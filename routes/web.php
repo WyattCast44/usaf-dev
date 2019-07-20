@@ -1,6 +1,6 @@
 <?php
 
-Route::view('/', 'welcome');
+Route::get('/', 'HomePageController');
 
 Auth::routes(['register' => config('setting.open-registration'), 'verify' => true]);
 
