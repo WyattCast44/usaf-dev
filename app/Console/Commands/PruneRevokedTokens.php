@@ -19,7 +19,7 @@ class PruneRevokedTokens extends Command
      *
      * @var string
      */
-    protected $description = 'Prune/delete old revoked access tokens.';
+    protected $description = 'Prune old revoked access tokens.';
 
     /**
      * Create a new command instance.
