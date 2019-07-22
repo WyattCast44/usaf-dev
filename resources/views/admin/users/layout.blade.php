@@ -13,7 +13,7 @@
                 <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.index') }}" href="#">All Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">Create User</a>
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.create') }}" href="{{ route('admin.users.create') }}">Create User</a>
             </li>
         </ul>
 

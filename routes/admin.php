@@ -10,6 +10,8 @@ Route::get('/dashboard/apps/{app}', 'Admin\AppsController@show')->name('admin.ap
 
 // Users...
 Route::get('/dashboard/users', 'Admin\UsersController@index')->name('admin.users.index');
+Route::post('/dashboard/users', 'Admin\UsersController@store')->name('admin.users.store');
+Route::get('/dashboard/users/create', 'Admin\UsersController@create')->name('admin.users.create');
 Route::get('/dashboard/users/{user}', 'Admin\UsersController@show')->name('admin.users.show');
 
 // GSuite
