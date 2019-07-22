@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', 'HomePageController');
 
 Auth::routes(['register' => config('setting.open-registration'), 'verify' => true]);
