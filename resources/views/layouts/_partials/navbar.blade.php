@@ -32,7 +32,13 @@
 
                     <div class="dropdown">
                         <a class="btn btn-link dropdown-toggle tw-p-0 hover:tw-no-underline focus:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ auth()->user()->display_name }}
+
+                            @if(auth()->user()->avatar <> null)
+                                <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->display_name }}">
+                            @else
+                                {{ auth()->user()->display_name }}
+                            @endif
+
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right tw-mt-3" aria-labelledby="user-profile-menu">

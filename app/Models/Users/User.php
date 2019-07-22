@@ -13,6 +13,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Passport\Token;
 use App\Models\GSuite\GSuiteAccount;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -121,6 +122,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function setEmailAttribute($value)
     {
         $this->attributes['email'] = strtolower($value);
+    }
+
+    public function getAvatarUrlAttribute()
+    {
+        if (!Storage::exists($this->avatar)) {
+            return '';
+        }
+
+        return Storage::url($this->avatar);
     }
 
     /**
