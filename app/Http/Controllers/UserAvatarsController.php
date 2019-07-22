@@ -16,11 +16,11 @@ class UserAvatarsController extends Controller
         $this->validate($request, [
             'avatar' => 'required|image'
         ]);
-
+        
         if (!$request->file('avatar')->isValid()) {
             return back();
         }
-
+        
         auth()->user()->update([
             'avatar' => $request->avatar->store('avatars')
         ]);

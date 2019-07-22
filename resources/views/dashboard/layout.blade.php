@@ -2,12 +2,16 @@
 
 @section('content')
 
-<div class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300  tw-pt-10">
+<div class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300">
 
-    <div class="container">
+    <div class="container tw-pt-12">
 
-        <div class="tw-mb-8">
-            <h2 class="tw-text-2xl tw-m-0 tw-p-0">{{ auth()->user()->display_name }}</h2>
+        <div class="tw-flex tw-mb-12 tw-items-center">
+            <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->display_name }}" class="tw-w-24 tw-rounded-full tw-mr-4">
+            <div>
+                <h2 class="tw-text-3xl tw-m-0 tw-mb-2 tw-p-0 tw-text-gray-700">{{ auth()->user()->display_name }}</h2>
+                <p>Learner, Maker, Teacher</p>
+            </div>
         </div>
     
         <ul class="nav nav-tabs" style="border:none">

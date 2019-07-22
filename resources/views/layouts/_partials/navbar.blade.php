@@ -1,5 +1,5 @@
-<nav class="tw-py-6 tw-shadow-md tw-border-b tw-border-solid tw-border-gray-400 tw-bg-white tw-px-2">
-    <div class="container-fluid tw-flex tw-items-center tw-justify-between">
+<nav class="tw-py-4 tw-shadow-md tw-border-b tw-border-solid tw-border-gray-400 tw-bg-white tw-px-2">
+    <div class="container tw-flex tw-items-center tw-justify-between">
 
         <!-- Logo -->
         <div>
@@ -31,10 +31,10 @@
                 <nav class="tw-flex tw-items-center">
 
                     <div class="dropdown">
-                        <a class="btn btn-link dropdown-toggle tw-p-0 hover:tw-no-underline focus:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-link tw-flex tw-items-center dropdown-toggle tw-p-0 hover:tw-no-underline focus:tw-no-underline" href="#" role="button" id="user-profile-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                             @if(auth()->user()->avatar <> null)
-                                <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->display_name }}">
+                                <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->display_name }}" class="tw-w-8 tw-inline-block tw-rounded-full tw-mr-1 tw-shadow">
                             @else
                                 {{ auth()->user()->display_name }}
                             @endif
