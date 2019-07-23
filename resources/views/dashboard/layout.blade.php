@@ -9,8 +9,8 @@
         <div class="tw-flex tw-mb-12 tw-items-center">
             <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->display_name }}" class="tw-w-24 tw-rounded-full tw-mr-4">
             <div>
-                <h2 class="tw-text-3xl tw-m-0 tw-mb-2 tw-p-0 tw-text-gray-700">{{ auth()->user()->display_name }}</h2>
-                <p>Learner, Maker, Teacher</p>
+                <h2 class="tw-text-3xl tw-m-0 tw-mb-2 tw-font-light tw-p-0 tw-text-gray-700">{{ auth()->user()->display_name }}</h2>
+                <p class="tw-font-light">Joined {{ auth()->user()->created_at->diffForHumans() }}</p>
             </div>
         </div>
     

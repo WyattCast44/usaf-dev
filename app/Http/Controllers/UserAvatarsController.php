@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserAvatarsController extends Controller
 {
@@ -22,7 +23,7 @@ class UserAvatarsController extends Controller
         }
         
         auth()->user()->update([
-            'avatar' => $request->avatar->store('avatars')
+            'avatar' => Storage::put('avatar', $request->avatar, 'public'),
         ]);
 
         toast('Avatar Updated!', 'success', 'top');

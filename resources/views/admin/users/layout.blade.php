@@ -10,7 +10,7 @@
 
         <ul class="nav nav-tabs" style="border:none">
             <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.index') }}" href="#">All Users</a>
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.index') }}" href="{{ route('admin.users.index') }}">All Users</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link hover:tw-bg-white {{ applyActive('admin.users.create') }}" href="{{ route('admin.users.create') }}">Create User</a>
