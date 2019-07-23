@@ -25,9 +25,6 @@
                     My Apps
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link hover:tw-bg-white" href="#">All Apps</a>
-            </li>
         </ul>
 
     </div>
