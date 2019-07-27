@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Users\User;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 

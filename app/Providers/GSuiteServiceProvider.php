@@ -21,11 +21,11 @@ class GSuiteServiceProvider extends ServiceProvider implements DeferrableProvide
             return new GSuite;
         });
 
-        $this->app->bind(GSuiteAccountsRepository::class, function ($app) {
+        $this->app->singleton(GSuiteAccountsRepository::class, function ($app) {
             return new GSuiteAccountsRepository;
         });
 
-        $this->app->bind(GSuiteGroupRepository::class, function ($app) {
+        $this->app->singleton(GSuiteGroupRepository::class, function ($app) {
             return new GSuiteGroupRepository;
         });
     }

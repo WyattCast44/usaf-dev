@@ -29,6 +29,6 @@ class PasswordMinLength implements Rule
      */
     public function message()
     {
-        return "Your password must be at least " . config('settings.min-password-length') . " characters long.";
+        return "Your password must be at least " . config('settings.min-password-length', 8) . " characters long.";
     }
 }

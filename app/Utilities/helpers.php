@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Apply an "active" css class if current route matches
