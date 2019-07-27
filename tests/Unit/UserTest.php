@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\Users\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Reference\Gender;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
@@ -56,7 +56,7 @@ class UserTest extends TestCase
         $this->assertEquals($gender->id, $user->refresh()->gender->id);
     }
 
-    public function test_if_a_user_updates_thier_email_it_becomes_unverified()
+    public function test_if_a_user_updates_thier_email_it_must_meet_email_requirements()
     {
         // Given me have a user
         $user = create(User::class);

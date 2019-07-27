@@ -3,8 +3,10 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Users\User;
+use App\Events\UserLoggedIn;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
 {
@@ -59,5 +61,23 @@ class LoginTest extends TestCase
 
         // And our last_login should be not be null
         $this->assertNotNull($user->refresh()->last_login);
+    }
+
+    public function test_when_a_user_logs_in_an_event_is_emitted()
+    {
+        Event::fake();
+
+        // Given we have a user
+        $user = create(User::class, ['email' => 'email@us.af.mil']); // password = password
+        
+        // And we attempt to login
+        $this->get('/login');
+        $res = $this->post('/login', ['email' => $user->email, 'password' => 'password']);
+
+        // We should be logged in
+        $this->assertAuthenticated('web');
+
+        // An logged in event should have been fired
+        Event::assertDispatched(UserLoggedIn::class);
     }
 }
