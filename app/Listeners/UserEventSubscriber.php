@@ -8,24 +8,29 @@ use App\Events\Users\UserRegistered;
 class UserEventSubscriber
 {
     /**
-     * Handle user login events.
-     */
-    public function handleUserLogin($event)
-    {
-        // Emit Event
-        event(new UserLoggedIn($event->user));
-
-        // Update last login
-        $event->user->update(['last_login' => now()]);
-    }
-
-    /**
      * Handle user registered events.
      */
     public function handleUserRegistration($event)
     {
-        // Emit Event
         event(new UserRegistered($event->user));
+    }
+
+    /**
+     * Handle user email verified events.
+     */
+    public function handleUserEmailVerification($event)
+    {
+        //
+    }
+
+    /**
+     * Handle user login events.
+     */
+    public function handleUserLogin($event)
+    {
+        event(new UserLoggedIn($event->user));
+
+        $event->user->update(['last_login' => now()]);
     }
 
     /**

@@ -41,3 +41,11 @@ require("./bootstrap");
 var Turbolinks = require("turbolinks");
 
 Turbolinks.start();
+
+document.addEventListener("turbolinks:load", () => {
+    if (!window.livewire) {
+        window.livewire = new Livewire();
+    } else {
+        window.livewire.restart();
+    }
+});

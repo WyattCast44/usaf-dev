@@ -14,5 +14,6 @@
     @yield('body')
 
     @include('sweetalert::alert')
+    @livewireAssets
 </body>
 </html>
