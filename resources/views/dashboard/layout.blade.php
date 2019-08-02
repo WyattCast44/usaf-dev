@@ -27,6 +27,13 @@
                     My Apps
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link hover:tw-bg-white {{ applyActive('user.profile.*') }}" href="{{ route('user.profile.index') }}">
+                    My Profile
+                </a>
+            </li>
+
         </ul>
 
     </div>
