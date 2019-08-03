@@ -51,4 +51,22 @@ return [
     */
     'monthly_cost_per_user' => 12.00,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Groups cache name
+    |--------------------------------------------------------------------------
+    | Name to cache the gsuite groups under
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'group-cache' => 'gsuite:groups',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Accounts cache name
+    |--------------------------------------------------------------------------
+    | Name to cache the gsuite accounts under
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'accounts-cache' => 'gsuite:accounts',
+    
 ];

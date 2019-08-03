@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <a href="{{ route('admin.gsuite.groups.refresh') }}" class="btn btn-primary">Refresh</a>
+        <a href="{{ route('admin.gsuite.groups.refresh') }}" class="btn btn-primary" data-turbolinks="false">Refresh</a>
         <a href="{{ route('admin.gsuite.groups.create') }}" class="btn btn-primary">Create Group</a>
     </div>
 </div>

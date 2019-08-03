@@ -11,16 +11,20 @@ class GSuiteGroupRepository
      */
     protected $directory_client;
 
+    protected $cache_name;
+
     public function __construct(GSuite $gsuite)
     {
         $this->directory_client = $gsuite->directory_client;
+
+        $this->cache_name = config('gsuite.groups-cache', 'gsuite:groups');
 
         return $this;
     }
 
     public function forceRefresh()
     {
-        Cache::forget('gsuite:groups');
+        Cache::forget($this->cache_name);
 
         return $this;
     }
@@ -31,11 +35,11 @@ class GSuiteGroupRepository
      */
     public function get($email)
     {
-        if (Cache::has('gsuite:groups')) {
-            $group = Cache::get('gsuite:groups')->firstWhere('email', $email);
+        if (Cache::has($this->cache_name)) {
+            $group = Cache::get($this->cache_name)->firstWhere('email', $email);
         } else {
             $groups = collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
-            Cache::add('gsuite:groups', $groups, now()->addMinutes(30));
+            Cache::add($this->cache_name, $groups, now()->addMinutes(30));
             $group = $groups->firstWhere('email', $email);
         }
 
@@ -48,11 +52,11 @@ class GSuiteGroupRepository
      */
     public function fetch()
     {
-        if (Cache::has('gsuite:groups')) {
-            $groups = Cache::get('gsuite:groups');
+        if (Cache::has($this->cache_name)) {
+            $groups = Cache::get($this->cache_name);
         } else {
             $groups = collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
-            Cache::add('gsuite:groups', $groups, now()->addMinutes(10));
+            Cache::add($this->cache_name, $groups, now()->addMinutes(10));
         }
 
         return $groups;
@@ -89,7 +93,7 @@ class GSuiteGroupRepository
      */
     public function delete($email)
     {
-        Cache::forget('gsuite:groups');
+        Cache::forget($this->cache_name);
         
         return $this->directory_client->groups->delete($email);
     }
