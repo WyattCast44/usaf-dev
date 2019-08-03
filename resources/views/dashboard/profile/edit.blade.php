@@ -102,14 +102,14 @@
         <div class="form-group row tw-mb-6">
             <label for="password" class="col-sm-3 col-form-label tw-text-gray-700">Current Password</label>
             <div class="col-sm-9">
-                <input type="password" name="password" id="password" class="form-control">
+                <input type="password" name="password" id="password" class="form-control" autocomplete="false" spellcheck="false">
             </div>
         </div>
 
         <div class="form-group row tw-mb-6">
             <label for="new_password" class="col-sm-3 col-form-label tw-text-gray-700">New Password</label>
             <div class="col-sm-9">
-                <input type="password" name="new_password" id="new_password" class="form-control">
+                <input type="password" name="new_password" id="new_password" class="form-control" autocomplete="false" spellcheck="false">
             </div>
         </div>
 
@@ -119,7 +119,7 @@
             </label>
             <div class="col-sm-9">
                 <input type="password" name="new_password_confirmation" id="new_password_confirmation"
-                    class="form-control">
+                    class="form-control" autocomplete="false" spellcheck="false">
             </div>
         </div>
 
