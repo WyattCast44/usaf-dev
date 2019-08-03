@@ -26,7 +26,6 @@
                     <th class="tw-p-3" scope="col">Name</th>
                     <th class="tw-p-3" scope="col">Email</th>
                     <th class="tw-p-3" scope="col">Members</th>
-                    <th class="tw-p-3" scope="col">Owner</th>
                     <th class="tw-p-3" scope="col"></th>
                 </tr>
             </thead>
@@ -44,9 +43,6 @@
                         </td>
                         <td class="tw-text-sm tw-text-gray-600">
                             {{ $group->directMembersCount }}
-                        </td>
-                        <td class="">
-                            <a href="#" class="tw-font-semibold tw-text-blue-500 hover:tw-no-underline">Team: 12th TRS</a>
                         </td>
                         <td class="text-right">
                             <a href="#" class="tw-text-gray-500 tw-mr-2" title="Add member">
