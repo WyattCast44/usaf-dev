@@ -18,6 +18,13 @@ class GSuiteGroupRepository
         return $this;
     }
 
+    public function forceRefresh()
+    {
+        Cache::forget('gsuite:groups');
+
+        return $this;
+    }
+
     /**
      * Get GSuite group
      * @return \Google_Service_Directory_Group
@@ -45,7 +52,7 @@ class GSuiteGroupRepository
             $groups = Cache::get('gsuite:groups');
         } else {
             $groups = collect($this->directory_client->groups->listGroups(['domain' => config('gsuite.domain')])->groups);
-            Cache::add('gsuite:groups', $groups, now()->addMinutes(30));
+            Cache::add('gsuite:groups', $groups, now()->addMinutes(10));
         }
 
         return $groups;
@@ -62,9 +69,11 @@ class GSuiteGroupRepository
             'description' => $attributes['description'],
         ]);
 
-        Cache::forget('gsuite:groups');
+        $group = $this->directory_client->groups->insert($group);
 
-        return $this->directory_client->groups->insert($group);
+        $this->forceRefresh();
+
+        return $group;
     }
 
     /**

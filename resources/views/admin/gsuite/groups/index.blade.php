@@ -11,6 +11,7 @@
     </div>
 
     <div>
+        <a href="{{ route('admin.gsuite.groups.refresh') }}" class="btn btn-primary">Refresh</a>
         <a href="{{ route('admin.gsuite.groups.create') }}" class="btn btn-primary">Create Group</a>
     </div>
 </div>
@@ -37,9 +38,8 @@
                     <tr class="tw-border-b tw-border-solid tw-border-gray-300">
                         <td>{{ $group->name }}</td>
                         <td class="tw-flex items-center">
-                            {{ $group->email }} 
-                            <a href="mailto:{{ $group->email }}" class="tw-text-gray-500 hover:tw-text-blue-600"
-                                 title="Email group">@svg('mail', 'tw-w-4 tw-ml-2')
+                            <a href="mailto:{{ $group->email }}" class="tw-text-blue-600 hover:tw-text-blue-600" title="Email group">
+                                {{ $group->email }} 
                             </a>
                         </td>
                         <td class="tw-text-sm tw-text-gray-600">

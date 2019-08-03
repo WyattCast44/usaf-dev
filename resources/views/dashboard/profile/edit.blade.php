@@ -4,10 +4,18 @@
 
 @section('dashboard-content')
 
-    <!-- General Info -->
-    @include('dashboard.profile._partials.general')
+    <siv class="row">
 
-    <!-- Password Change -->
-    @includeWhen(config('settings.allow-password-resets'), 'dashboard.profile._partials.password')    
+        <div class="col-md-8 tw-flex-col tw-items-center tw-justify-center">
+
+            <!-- General Info -->
+            @include('dashboard.profile._partials.general')
+
+            <!-- Password Change -->
+            @includeWhen(config('settings.allow-password-resets'), 'dashboard.profile._partials.password')    
+
+        </div>
+
+    </siv>
 
 @endsection

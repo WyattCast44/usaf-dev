@@ -55,4 +55,11 @@ class GSuiteGroupsController extends Controller
 
         return redirect()->route('admin.gsuite.groups.index');
     }
+
+    public function refresh(GSuiteGroupRepository $groups_repo)
+    {
+        $groups_repo->forceRefresh();
+        
+        return redirect()->back();
+    }
 }
