@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Wyattcast44\GSuite\GSuite;
 use App\Http\Controllers\Controller;
 use App\Rules\ValidGSuiteGroupEmail;
-use Illuminate\Http\Request;
 
 class GSuiteAccountsController extends Controller
 {
@@ -33,10 +34,19 @@ class GSuiteAccountsController extends Controller
             'last_name' => ['required', 'string', 'max:60'],
             'email' => ['required', 'email', new ValidGSuiteGroupEmail],
         ]);
-
-        $group = $gsuite->accounts()->insert();
         
-        return redirect()->route('admin.gsuite.groups.show', $group->email);
+        $name = [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+        ];
+
+        $password = Str::random(16);
+
+        $gsuite->accounts()->insert($name, $request->email, $password);
+
+        alert('Account created!', 'Your new account has been created, it may take a few minutes to appear.', 'success');
+        
+        return redirect()->route('admin.gsuite.accounts.index');
     }
 
     public function refresh(GSuite $gsuite)

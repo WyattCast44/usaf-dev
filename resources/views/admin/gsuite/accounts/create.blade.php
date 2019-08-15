@@ -7,18 +7,18 @@
     <h3 class="tw-text-2xl tw-mb-2">Create Account</h3>
 </div>
 
-<form action="{{ route('admin.gsuite.groups.store') }}" method="post">
+<form action="{{ route('admin.gsuite.accounts.store') }}" method="post">
 
     @csrf
 
     <div class="form-group">
-        <label for="name">Account First Name</label>
-        <input type="text" name="name" id="name" class="form-control" required autofocus>
+        <label for="first_name">Account First Name</label>
+        <input type="text" name="first_name" id="first_name" class="form-control" required autofocus>
     </div>
 
     <div class="form-group">
-        <label for="name">Account Last Name</label>
-        <input type="text" name="name" id="name" class="form-control" required autofocus>
+        <label for="last_name">Account Last Name</label>
+        <input type="text" name="last_name" id="last_name" class="form-control" required autofocus>
     </div>
 
     <div class="form-group">
