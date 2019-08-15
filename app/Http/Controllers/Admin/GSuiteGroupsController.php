@@ -40,18 +40,14 @@ class GSuiteGroupsController extends Controller
     public function store(Request $request, GSuite $gsuite)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'name' => 'required|string|max:255',
             'email' => ['required', 'email', new ValidGSuiteGroupEmail],
-            'description' => 'required|string|max:1026'
+            'description' => 'required|string|max:512'
         ]);
 
-        $gsuite->groups()->create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'description' => $request->description
-        ]);
+        $gsuite->groups()->insert($request->email, $request->name, $request->description);
 
-        alert('Group created!', 'Your new group has been created, but may take a few minutes to appear.', 'success');
+        alert('Group created!', 'Your new group has been created, it may take a few minutes to appear.', 'success');
 
         return redirect()->route('admin.gsuite.groups.index');
     }
@@ -60,6 +56,6 @@ class GSuiteGroupsController extends Controller
     {
         $gsuite->groups()->flushCache();
         
-        return redirect()->back();
+        return redirect()->route('admin.gsuite.groups.index');
     }
 }

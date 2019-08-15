@@ -6,11 +6,12 @@
     <div>
         <h3 class="tw-text-2xl tw-mb-2">All Accounts</h3>
         <p class="tw-text-gray-500">
-            Each is a fully featured G Suite account
+            Each is a fully featured G-Suite account
         </p>
     </div>
 
     <div>
+        <a href="{{ route('admin.gsuite.accounts.refresh') }}" class="btn btn-primary" data-turbolinks="false">Refresh</a>
         <a href="{{ route('admin.gsuite.accounts.create') }}" class="btn btn-primary">Create Account</a>
     </div>
 </div>
