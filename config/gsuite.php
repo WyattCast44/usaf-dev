@@ -82,5 +82,25 @@ return [
     | @link https://developers.google.com/admin-sdk/directory/v1/reference/
     */
     'monthly_cost_per_user' => 12.00,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Undeletable Accounts
+    |--------------------------------------------------------------------------
+    | Accounts that I don't want anyone to be able to delete
+    |
+    */
+    'undeletable' => [
+        
+        'accounts' => [
+            'admin@usaf.cloud',
+            'wyatt@usaf.cloud',
+        ],
+
+        'groups' => [
+            'classroom_teachers@usaf.cloud'
+        ]
+
+    ]
     
 ];

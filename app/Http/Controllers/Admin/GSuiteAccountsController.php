@@ -73,9 +73,15 @@ class GSuiteAccountsController extends Controller
             'email' => ['required', 'email', new ValidGSuiteGroupEmail]
         ]);
 
-        $gsuite->accounts()->delete($request->email);
+        try {
+            $gsuite->accounts()->delete($request->email);
+        } catch (\Exception $e) {
+            alert('Unable to delete!', 'An error occured while trying to delete the requested account, please talk to an admin.', 'error');
 
-        alert('Account deleted!', 'The request account has been deleted, it may take a few minutes to disappear.', 'success');
+            return redirect()->route('admin.gsuite.accounts.index');
+        }
+
+        alert('Account deleted!', 'The requested account has been deleted, it may take a few minutes to disappear.', 'success');
 
         return redirect()->route('admin.gsuite.accounts.index');
     }

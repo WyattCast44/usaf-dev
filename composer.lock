@@ -4571,7 +4571,7 @@
             "dist": {
                 "type": "path",
                 "url": "../gsuite-package",
-                "reference": "82328536b5bbb445fa757ce52528b165d954e389"
+                "reference": "67047504bc848ec8a05a960bbceb299c06754505"
             },
             "require": {
                 "google/apiclient": "^2.2",
