@@ -27,6 +27,12 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link hover:tw-bg-white {{ applyActive('admin.gsuite.settings.*') }}" href="{{ route('admin.gsuite.settings.index') }}">
+                    Settings
+                </a>
+            </li>
+
         </ul>
 
     </div>

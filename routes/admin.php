@@ -32,5 +32,8 @@ Route::get('/dashboard/gsuite/groups/create', 'Admin\GSuiteGroupsController@crea
 Route::get('/dashboard/gsuite/groups/refresh', 'Admin\GSuiteGroupsController@refresh')->name('admin.gsuite.groups.refresh');
 Route::get('/dashboard/gsuite/groups/show/{email}', 'Admin\GSuiteGroupsController@show')->name('admin.gsuite.groups.show');
 
+// G-Suite Settings
+Route::get('/dashboard/gsuite/settings', 'Admin\GSuiteSettingsController@index')->name('admin.gsuite.settings.index');
+
 // Security
 Route::get('/dashboard/security', 'Admin\SecurityController@index')->name('admin.security.index');
