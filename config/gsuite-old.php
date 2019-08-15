@@ -4,13 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Account to impersonate
+    | User to impersonate
     |--------------------------------------------------------------------------
-    | The email of the account to impersonate, account should have neccessary
+    | The email of the user to impersonate, user should have neccessary
     | permissions for the scopes requested
-    |
-    | @link https://developers.google.com/admin-sdk/directory/v1/guides/delegation
-    |
     */
     'subject' => env('GOOGLE_SERVICE_ACCOUNT_USER'),
 
@@ -19,9 +16,7 @@ return [
     | Path to Credentials
     |--------------------------------------------------------------------------
     | This should be the full path to the credentials file supplied
-    | by google when creating a service account. Ensure you add
-    | your credentials file to your .gitignore file
-    |
+    | by google when creating a service account
     */
     'credentials_path' => storage_path('credentials.json'),
 
@@ -30,9 +25,8 @@ return [
     | Scopes
     |--------------------------------------------------------------------------
     | The scopes requested
-    |
-    | @link https://developers.google.com/admin-sdk/directory/v1/guides/authorizing
-    |
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    | @link https://admin.google.com/usaf.cloud/AdminHome?chromeless=1#OGX:ManageOauthClients
     */
     'scopes' => [
         'https://www.googleapis.com/auth/admin.directory.user',
@@ -43,36 +37,10 @@ return [
     |--------------------------------------------------------------------------
     | Domain
     |--------------------------------------------------------------------------
-    | Your GSuite domain
-    |
+    | Your domain
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
     */
     'domain' => 'usaf.cloud',
-    
-    /*
-    |--------------------------------------------------------------------------
-    | Cache
-    |--------------------------------------------------------------------------
-    | Caching options
-    |
-    */
-    'cache' => [
-        
-        'accounts' => [
-            'cache' => true,
-
-            'key' => 'gsuite:accounts',
-            
-            'time' => 600, // seconds
-        ],
-
-        'groups' => [
-            'cache' => true,
-            
-            'key' => 'gsuite:groups',
-
-            'time' => 600, //seconds
-        ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -82,5 +50,23 @@ return [
     | @link https://developers.google.com/admin-sdk/directory/v1/reference/
     */
     'monthly_cost_per_user' => 12.00,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Groups cache name
+    |--------------------------------------------------------------------------
+    | Name to cache the gsuite groups under
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'group-cache' => 'gsuite:groups',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Accounts cache name
+    |--------------------------------------------------------------------------
+    | Name to cache the gsuite accounts under
+    | @link https://developers.google.com/admin-sdk/directory/v1/reference/
+    */
+    'accounts-cache' => 'gsuite:accounts',
     
 ];

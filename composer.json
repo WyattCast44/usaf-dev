@@ -20,7 +20,8 @@
         "nothingworks/blade-svg": "^0.3.1",
         "realrashid/sweet-alert": "^2.0",
         "spatie/laravel-permission": "^2.37",
-        "webpatser/laravel-uuid": "^3.0"
+        "webpatser/laravel-uuid": "^3.0",
+        "wyattcast44/gsuite": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -78,5 +79,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../gsuite-package"
+        }
+    ]
 }

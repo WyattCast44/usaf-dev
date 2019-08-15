@@ -14,15 +14,15 @@ Route::post('/dashboard/users', 'Admin\UsersController@store')->name('admin.user
 Route::get('/dashboard/users/create', 'Admin\UsersController@create')->name('admin.users.create');
 Route::get('/dashboard/users/{user}', 'Admin\UsersController@show')->name('admin.users.show');
 
-// GSuite
+// G-Suite
 Route::get('/dashboard/gsuite', 'Admin\GSuiteController@index')->name('admin.gsuite.index');
 
-// GSuite Accounts
+// G-Suite Accounts
 Route::get('/dashboard/gsuite/accounts', 'Admin\GSuiteAccountsController@index')->name('admin.gsuite.accounts.index');
 Route::post('/dashboard/gsuite/accounts', 'Admin\GSuiteAccountsController@store')->name('admin.gsuite.accounts.store');
 Route::get('/dashboard/gsuite/accounts/create', 'Admin\GSuiteAccountsController@create')->name('admin.gsuite.accounts.create');
 
-// GSuite Groups
+// G-Suite Groups
 Route::get('/dashboard/gsuite/groups', 'Admin\GSuiteGroupsController@index')->name('admin.gsuite.groups.index');
 Route::post('/dashboard/gsuite/groups', 'Admin\GSuiteGroupsController@store')->name('admin.gsuite.groups.store');
 Route::get('/dashboard/gsuite/groups/create', 'Admin\GSuiteGroupsController@create')->name('admin.gsuite.groups.create');

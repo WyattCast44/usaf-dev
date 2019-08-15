@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use Wyattcast44\GSuite\GSuite;
 use App\Http\Controllers\Controller;
-use App\Services\GSuite\GSuiteAccountsRepository;
 
 class GSuiteAccountsController extends Controller
 {
@@ -13,9 +12,9 @@ class GSuiteAccountsController extends Controller
         $this->middleware(['auth', 'verified', 'admin']);
     }
     
-    public function index(GSuiteAccountsRepository $users_repo)
+    public function index(GSuite $gsuite)
     {
-        $accounts = $users_repo->fetch();
+        $accounts = $gsuite->accounts()->list();
 
         return view('admin.gsuite.users.index', ['accounts' => $accounts]);
     }

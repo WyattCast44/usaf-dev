@@ -21,7 +21,7 @@
                 
                 <tr class="tw-border-b tw-border-solid tw-border-gray-300">
                     <td>
-                        Number of GSuite Accounts
+                        Number of G-Suite Accounts
                     </td>
                     <td>
                         {{ $accounts_number }}

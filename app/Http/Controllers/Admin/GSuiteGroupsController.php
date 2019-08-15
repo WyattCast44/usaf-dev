@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Wyattcast44\GSuite\GSuite;
 use App\Http\Controllers\Controller;
 use App\Rules\ValidGSuiteGroupEmail;
-use App\Services\GSuite\GSuiteGroupRepository;
 
 class GSuiteGroupsController extends Controller
 {
@@ -14,16 +14,16 @@ class GSuiteGroupsController extends Controller
         $this->middleware(['auth', 'verified', 'admin']);
     }
     
-    public function index(GSuiteGroupRepository $groups_repo)
+    public function index(GSuite $gsuite)
     {
-        $groups = $groups_repo->fetch();
+        $groups = $gsuite->groups()->list();
 
         return view('admin.gsuite.groups.index', ['groups' => $groups]);
     }
 
-    public function show(GSuiteGroupRepository $groups_repo, $email)
+    public function show(GSuite $gsuite, $email)
     {
-        $group = $groups_repo->get($email);
+        $group = $gsuite->groups()->get($email);
 
         if ($group === null) {
             return abort(404);
@@ -37,7 +37,7 @@ class GSuiteGroupsController extends Controller
         return view('admin.gsuite.groups.create');
     }
 
-    public function store(Request $request, GSuiteGroupRepository $groups_repo)
+    public function store(Request $request, GSuite $gsuite)
     {
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -45,7 +45,7 @@ class GSuiteGroupsController extends Controller
             'description' => 'required|string|max:1026'
         ]);
 
-        $groups_repo->create([
+        $gsuite->groups()->create([
             'name' => $request->name,
             'email' => $request->email,
             'description' => $request->description
@@ -56,9 +56,9 @@ class GSuiteGroupsController extends Controller
         return redirect()->route('admin.gsuite.groups.index');
     }
 
-    public function refresh(GSuiteGroupRepository $groups_repo)
+    public function refresh(GSuite $gsuite)
     {
-        $groups_repo->forceRefresh();
+        $gsuite->groups()->flushCache();
         
         return redirect()->back();
     }
