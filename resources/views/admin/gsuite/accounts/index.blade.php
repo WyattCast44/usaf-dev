@@ -37,14 +37,15 @@
                     <tr class="tw-border-b tw-border-solid tw-border-gray-300">
                         <td>{{ $account->name->fullName }}</td>
                         <td class="tw-flex items-center">
-                            {{ $account->primaryEmail }} 
-                            <a href="mailto:{{ $account->primaryEmail }}" class="tw-text-gray-500 hover:tw-text-blue-600"
-                                 title="Email group">@svg('mail', 'tw-w-4 tw-ml-2')
+                            <a href="mailto:{{ $account->primaryEmail }}" class="btn btn-link tw-px-2 tw-py-0"
+                                 title="Email group">{{ $account->primaryEmail }} 
                             </a>
                         </td>
                         <td>...</td>
                         <td class="text-right">
-                            <a href="{{ route('admin.gsuite.accounts.show', $account->primaryEmail) }}" class="tw-text-gray-500">
+                            @include('admin.gsuite.accounts._partials.delete')
+
+                            <a href="{{ route('admin.gsuite.accounts.show', $account->primaryEmail) }}" class="btn btn-link tw-px-2 tw-py-0" title="View account">
                                 @svg('chevron-right')
                             </a>
                         </td>

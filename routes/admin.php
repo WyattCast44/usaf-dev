@@ -23,6 +23,7 @@ Route::post('/dashboard/gsuite/accounts', 'Admin\GSuiteAccountsController@store'
 Route::get('/dashboard/gsuite/accounts/create', 'Admin\GSuiteAccountsController@create')->name('admin.gsuite.accounts.create');
 Route::get('/dashboard/gsuite/accounts/show/{email}', 'Admin\GSuiteAccountsController@show')->name('admin.gsuite.accounts.show');
 Route::get('/dashboard/gsuite/accounts/refresh', 'Admin\GSuiteAccountsController@refresh')->name('admin.gsuite.accounts.refresh');
+Route::post('/dashboard/gsuite/accounts/delete', 'Admin\GSuiteAccountsController@delete')->name('admin.gsuite.accounts.delete');
 
 // G-Suite Groups
 Route::get('/dashboard/gsuite/groups', 'Admin\GSuiteGroupsController@index')->name('admin.gsuite.groups.index');

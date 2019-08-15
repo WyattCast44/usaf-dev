@@ -66,4 +66,17 @@ class GSuiteAccountsController extends Controller
         
         return redirect()->route('admin.gsuite.accounts.index');
     }
+
+    public function delete(Request $request, GSuite $gsuite)
+    {
+        $this->validate($request, [
+            'email' => ['required', 'email', new ValidGSuiteGroupEmail]
+        ]);
+
+        $gsuite->accounts()->delete($request->email);
+
+        alert('Account deleted!', 'The request account has been deleted, it may take a few minutes to disappear.', 'success');
+
+        return redirect()->route('admin.gsuite.accounts.index');
+    }
 }
