@@ -44,7 +44,7 @@
                         </td>
                         <td>...</td>
                         <td class="text-right">
-                            <a href="#" class="tw-text-gray-500">
+                            <a href="{{ route('admin.gsuite.accounts.show', $account->primaryEmail) }}" class="tw-text-gray-500">
                                 @svg('chevron-right')
                             </a>
                         </td>

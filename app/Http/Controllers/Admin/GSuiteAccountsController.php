@@ -49,6 +49,17 @@ class GSuiteAccountsController extends Controller
         return redirect()->route('admin.gsuite.accounts.index');
     }
 
+    public function show(GSuite $gsuite, $email)
+    {
+        $account = $gsuite->accounts()->get($email);
+
+        if ($account === null) {
+            return abort(404);
+        }
+
+        return view('admin.gsuite.accounts.show', ['account' => $account]);
+    }
+
     public function refresh(GSuite $gsuite)
     {
         $gsuite->accounts()->flushCache();
