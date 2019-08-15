@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a20db123d6a28764e5107b017c97f372",
+    "content-hash": "75bd48752f90c050c6ca34aa3c762bf3",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -4568,10 +4568,16 @@
         {
             "name": "wyattcast44/gsuite",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyattCast44/gsuite.git",
+                "reference": "06435885c8e580f80b9e80f1f15c010e1f706fd4"
+            },
             "dist": {
-                "type": "path",
-                "url": "../gsuite-package",
-                "reference": "67047504bc848ec8a05a960bbceb299c06754505"
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyattCast44/gsuite/zipball/06435885c8e580f80b9e80f1f15c010e1f706fd4",
+                "reference": "06435885c8e580f80b9e80f1f15c010e1f706fd4",
+                "shasum": ""
             },
             "require": {
                 "google/apiclient": "^2.2",
@@ -4599,27 +4605,15 @@
                     "Wyattcast44\\GSuite\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Wyattcast44\\GSuite\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Wyatt",
-                    "email": "wyatt.castaneda@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "wyatt.castaneda@gmail.com"
                 }
             ],
             "description": "Helps manage your GSuite Account from your Laravel application",
@@ -4627,7 +4621,8 @@
             "keywords": [
                 "gsuite",
                 "wyattcast44"
-            ]
+            ],
+            "time": "2019-08-15T21:13:48+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
