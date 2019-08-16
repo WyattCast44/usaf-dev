@@ -2,7 +2,7 @@
 
 @section('page-content')
 
-<header class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300  tw-pt-10">
+<header class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300">
 
     <div class="tw-mx-12">
 

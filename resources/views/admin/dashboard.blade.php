@@ -2,9 +2,9 @@
 
 @section('page-content')
 
-<header class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300  tw-pt-10">
+<header class="tw-bg-gray-200 tw-border-b tw-border-solid tw-border-gray-300">
 
-    <div class="tw-mx-8">
+    <div class="tw-mx-12">
 
         <h3 class="tw-text-3xl tw-mb-8">Admin Dashboard</h3>
 

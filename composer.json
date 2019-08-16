@@ -20,6 +20,7 @@
         "nothingworks/blade-svg": "^0.3.1",
         "realrashid/sweet-alert": "^2.0",
         "spatie/laravel-permission": "^2.37",
+        "spatie/laravel-queueable-action": "^2.1",
         "webpatser/laravel-uuid": "^3.0",
         "wyattcast44/gsuite": "dev-master"
     },
