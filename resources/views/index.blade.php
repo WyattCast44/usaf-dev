@@ -16,8 +16,8 @@
         <div class="tw-flex tw-items-center tw-justify-between container tw-mb-24 tw-text-white">
 
             <div>
-                <h1 class="tw-font-extrabold tw-text-4xl">
-                    USAF Cloud @svg('cloud-lightning', 'tw-w-12 tw-h-12 tw-ml-2')
+                <h1 class="tw-font-extrabold tw-text-lg md:tw-text-4xl">
+                    USAF Cloud @svg('cloud-lightning', 'tw-h-6 tw-w-6 md:tw-w-12 md:tw-h-12 tw-ml-2')
                 </h1>
             </div>
 
@@ -33,7 +33,7 @@
                 A Open Platform for Airmen and Their Tools
             </h2>
 
-            <div class="tw-flex tw-items-bottom tw-justify-center tw-relative" style="top:25px">
+            <div class="tw-flex tw-items-bottom tw-justify-center tw-relative" style="top:25px; max-height:350px">
                 <img src="{{ asset('img/home.png') }}" alt="Home page screenshot" class="tw-w-4/5 tw-shadow-lg">
             </div>
         </div>
