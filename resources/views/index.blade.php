@@ -22,8 +22,8 @@
             </div>
 
             <div class="tw-uppercase tw-font-bold">
-                <a href="#" class="tw-mx-2 tw-px-3 tw-py-2 hover:tw-text-blue-100 hover:tw-no-underline">Login</a>
-                <a href="#" class="tw-mx-2 tw-px-3 tw-py-2 hover:tw-text-blue-100 hover:tw-no-underline">Register</a>
+                <a href="/login" class="tw-mx-2 tw-px-3 tw-py-2 hover:tw-text-blue-100 hover:tw-no-underline">Login</a>
+                <a href="/register" class="tw-mx-2 tw-px-3 tw-py-2 hover:tw-text-blue-100 hover:tw-no-underline">Register</a>
             </div>
 
         </div>
