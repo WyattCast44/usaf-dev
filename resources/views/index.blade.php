@@ -11,9 +11,9 @@
 </head>
 <body class="tw-font-sans tw-text-black tw-leading-tight tw-antialiased tw-bg-white">
 
-    <header class="tw-bg-blue-700 tw-pt-12">
+    <header class="tw-bg-blue-700 tw-relative">
 
-        <div class="tw-flex tw-items-center tw-justify-between container tw-mb-24 tw-text-white">
+        <div class="tw-flex tw-items-center tw-pt-12 tw-justify-between container tw-mb-24 tw-text-white tw-relative tw-z-10">
 
             <div>
                 <h1 class="tw-font-extrabold tw-text-lg md:tw-text-4xl">
@@ -28,7 +28,7 @@
 
         </div>
 
-        <div class="container">
+        <div class="container tw-relative tw-z-10">
             <h2 class="tw-text-white tw-text-4xl tw-font-thin tw-text-center tw-mb-12">
                 A Open Platform for Airmen and Their Tools
             </h2>
@@ -38,7 +38,22 @@
             </div>
         </div>
 
+        <div class="tw-absolute tw-px-12 tw-py-5 tw-top-0 tw-justify-start tw-flex tw-items-center" style="z-index:0;">
+            @svg('cloud-bg-layer', ['style' => 'transform:rotate(0deg);height:550px;width:550px;opacity:0.4;'])
+        </div>
+
     </header>
+
+    <section class="tw-bg-gray-100 tw-py-24">
+
+        <div class="container">
+
+            <h3>One Login. All Your Trusted Applications</h3>
+
+        </div>
+
+
+    </section>
 
 </body>
 </html>
