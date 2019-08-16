@@ -39,6 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_password_reset' => 'datetime',
         'last_login' => 'datetime'
     ];
 
@@ -74,6 +75,14 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return $this;
+    }
+
+    public function updatePassword($password)
+    {
+        return $this->update([
+            'password' => bcrypt($password),
+            'last_password_reset' => now()
+        ]);
     }
 
     /**

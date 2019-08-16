@@ -28,7 +28,7 @@ class UserPasswordResetController extends Controller
             'new_password' => ['required', 'string', 'confirmed', new PasswordMinLength]
         ]);
 
-        $user->update(['password' => bcrypt($request->new_password)]);
+        $user->updatePassword($request->new_password);
 
         alert('Password Updated!', '', 'success');
 
