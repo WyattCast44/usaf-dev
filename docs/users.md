@@ -14,3 +14,5 @@ used by squadrons and individuals.
 ## Admins
 
 -   Can view admin dashboard
+
+## New User Flow
